@@ -328,7 +328,44 @@ section[id] { scroll-margin-top: 80px; }
   background: linear-gradient(90deg, #F96D00, #ffbd39);
   box-shadow: 0 0 10px rgba(249,109,0,.4);
 }
-</style>	  
+</style>
+<style>
+/*======================================
+//--//-->   SOCIAL ICONS
+======================================*/
+#contact-section .ftco-footer-social { flex-wrap: wrap; gap: 12px; }
+#contact-section .ftco-footer-social li { margin: 0; }
+#contact-section .ftco-footer-social li.normal-txt {
+  margin-right: 6px;
+  font-size: 13px;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.55);
+}
+#contact-section .ftco-footer-social li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  color: #ffbd39;
+  font-size: 18px;
+  text-decoration: none;
+  transition: transform .3s ease, background .3s ease, color .3s ease, box-shadow .3s ease;
+}
+#contact-section .ftco-footer-social li a span { line-height: 1; }
+#contact-section .ftco-footer-social li a:hover {
+  background: linear-gradient(135deg, #F96D00, #ffbd39);
+  border-color: transparent;
+  color: #111;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(249,109,0,.35);
+}
+#contact-section { padding-bottom: 40px; }
+</style>
+	  
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -844,26 +881,21 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 	          </div>
           </div>
 
-		  <div class="container">
-			<br>
-			<br>
-			<div class="row justify-content-center">
+		  <div class="col-12">
+			<div class="row justify-content-center mt-5">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSd22ox7tOH40pYSHoLGHmJtpjwJediU1Q4Ysg07-rXh8FVptQ/viewform?usp=publish-editor" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+					<h2>Have a<span> Question? </span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSd22ox7tOH40pYSHoLGHmJtpjwJediU1Q4Ysg07-rXh8FVptQ/viewform" target="_blank" rel="noopener" class="btn btn-primary py-3 px-5">Click Here</a></h2>
 				</div>
 			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
-					  <p><a href="https://www.linkedin.com/in/dr-suvendu-mohanty/" target="_blank" rel="noopener" class="btn btn-primary py-3 px-3">LinkedIn</a></p>  
-					  <!-- <li class="ftco-animate"><a href="https://x.com/SMohanty89"><span class="icon-twitter"></span></a></li> -->
-					  <li class="ftco-animate"><a href="https://www.facebook.com/share/14vYcpRAAkt/"><span class="icon-facebook"></span></a></li>
-				      <li class="ftco-animate"><a href="https://www.instagram.com/suvu_mohanty?utm_source=qr&igsi=eWpuaXFuYnd4ZW9h"><span class="icon-instagram"></span></a></li>
-					</ul>
-				<br>
-		   </div>
+			<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0 mt-4">
+			  <li class="normal-txt">Find me on</li>
+			  <li class="ftco-animate"><a href="https://www.linkedin.com/in/dr-suvendu-mohanty/" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="icon-linkedin"></span></a></li>
+			  <li class="ftco-animate"><a href="https://www.facebook.com/share/14vYcpRAAkt/" target="_blank" rel="noopener" aria-label="Facebook"><span class="icon-facebook"></span></a></li>
+			  <li class="ftco-animate"><a href="https://www.instagram.com/suvu_mohanty?utm_source=qr&amp;igsi=eWpuaXFuYnd4ZW9h" target="_blank" rel="noopener" aria-label="Instagram"><span class="icon-instagram"></span></a></li>
+			</ul>
+		</div>
    </div>
+ </div>
  </section>
 
 
