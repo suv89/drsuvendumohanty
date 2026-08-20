@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Suvendu Mohanty Portfolio</title>
+        <title>Dr Suvendu Mohanty | Predictive Maintenance &amp; Industrial AI</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <!-- ===== search description & link previews ===== -->
+    <meta name="description" content=" Dr Suvendu Mohanty — PhD Mechanical Engineer specialising in Prognostics & Health Management, predictive maintenance, condition monitoring and industrial AI.">
+    <meta name="author" content="Suvendu Mohanty">
+    <link rel="canonical" href="https://suv89.github.io/drsuvendumohanty/">
+    <link rel="icon" href="images/about-me.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dr Suvendu Mohanty — Predictive Maintenance & Industrial AI">
+    <meta property="og: description" content=" PhD Mechanical Engineer | Prognostics & Health Management, condition monitoring, RUL estimation, wear-debris analysis.">
+    <meta property="og:url" content="https://suv89.github.io/drsuvendumohanty/">
+    <meta property="og:image" content="https://suv89.github.io/drsuvendumohanty/images/about-me.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- ===== end ===== -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -214,20 +225,31 @@ section[id] { scroll-margin-top: 80px; }
 /*======================================
 //--//-->   ABOUT PANEL — REFINED DARK
 ======================================*/
+
+/* card hugs its content instead of stretching to row height */
+#about-section .col-md-6.col-lg-5 { align-items: flex-start; }
 #about-section .img-about {
   width: 100%;
+  align-self: flex-start;
+  height: auto !important;
+  min-height: 0 !important;
   background: none;
 }
 #about-section .img-about .overlay {
   width: 100%;
-  padding: 36px 32px 30px;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 34px 30px 30px;
   background: linear-gradient(155deg, rgba(255,255,255,.055) 0%, rgba(255,255,255,.018) 50%, rgba(249,109,0,.06) 100%);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 16px;
   box-shadow: 0 24px 60px rgba(0,0,0,.55);
 }
 
-/* photo frame only — delete this rule to leave the image completely as-is */
+/* photo frame — delete this rule to leave the image untouched */
+#about-section .about-img {
+  margin-bottom: 0 !important;
+}
 #about-section .about-img img {
   width: 100%;
   margin-left: 0 !important;
@@ -241,12 +263,12 @@ section[id] { scroll-margin-top: 80px; }
   display: flex;
   align-items: baseline;
   margin: 0;
-  padding: 11px 0;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,.06);
   font-size: 14px;
   line-height: 1.5;
 }
-#about-section .about-info p:last-child { border-bottom: none; }
+#about-section .about-info p:last-child { border-bottom: none; padding-bottom: 0; }
 #about-section .about-info p .title-s {
   flex: 0 0 92px;
   font-size: 10.5px;
@@ -260,12 +282,12 @@ section[id] { scroll-margin-top: 80px; }
   font-weight: 500;
 }
 
-/* Skills block */
-#about-section .skill-mf { margin-top: 30px; }
+/* Skills — even rhythm, no dead space at the bottom */
+#about-section .skill-mf { margin-top: 26px; }
 #about-section .skill-mf p.title-s {
   position: relative;
-  margin: 0 0 20px;
-  padding-bottom: 10px;
+  margin: 0 0 18px;
+  padding-bottom: 9px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: .14em;
@@ -280,29 +302,31 @@ section[id] { scroll-margin-top: 80px; }
   background: linear-gradient(90deg, #F96D00, #ffbd39);
 }
 #about-section .skill-mf > span {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
+  line-height: 1.4;
   color: rgba(255,255,255,.82);
 }
 #about-section .skill-mf .pull-right {
   float: right;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
   color: #ffbd39;
 }
 #about-section .skill-mf .progress {
   clear: both;
-  height: 6px;
-  margin: .55rem 0 1.4rem;
+  height: 5px;
+  margin: 8px 0 16px;
   border-radius: 10px;
   background: rgba(255,255,255,.08);
   overflow: hidden;
 }
+#about-section .skill-mf .progress:last-of-type { margin-bottom: 0; }
 #about-section .skill-mf .progress .progress-bar {
-  height: 6px;
+  height: 5px;
   border-radius: 10px;
   background: linear-gradient(90deg, #F96D00, #ffbd39);
-  box-shadow: 0 0 12px rgba(249,109,0,.45);
+  box-shadow: 0 0 10px rgba(249,109,0,.4);
 }
 </style>	  
   </head>
@@ -396,8 +420,7 @@ section[id] { scroll-margin-top: 80px; }
 
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
     	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
+			<div class="row d-flex align-items-stretch">
 				<!-- <div class="row d-flex"> -->
 					<div class="col-md-6 col-lg-5 d-flex">
 						<div class="img-about img d-flex align-items-stretch">
@@ -405,7 +428,7 @@ section[id] { scroll-margin-top: 80px; }
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 									  <div class="about-img">
-										<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
+										<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="Dr Suvendu Mohanty, Mechanical Engineer">
 									  </div>
 									</div>
 									<!-- Details next to profile image -->
@@ -414,7 +437,7 @@ section[id] { scroll-margin-top: 80px; }
 										<p><span class="title-s">Name: </span> <span>Suvendu Mohanty</span></p>
 										<p><span class="title-s">Job Role: </span> <span>Mechanical Engineer</span></p>
 										<p><span class="title-s">Experience: </span> <span>5+ Years</span></p>
-										<p><span class="title-s">Address: </span> <span>Chennai, India</span></p>
+										<p><span class="title-s">Address: </span> <span>Dubai, UAE</span></p>
 									  </div>
 									</div>
 								  </div>
@@ -517,7 +540,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 		<div class="row">
 			<div class="col-md-6">
 				<div class="resume-wrap ftco-animate">
-					<span class="date">Aug 2024 - Aug 2026</span>
+					<span class="date">Aug 2024 - Present</span>
 					<h2>Postdoctoral Researcher, Mechanical Engineering</h2>
 					<span class="position">IIT Madras, Chennai, India</span>
 					<div class="mt-4">
@@ -731,7 +754,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="10">0</strong>
+                <strong class="number" data-number="5">0</strong>
                 <span>Projects</span>
               </div>
             </div>
@@ -799,7 +822,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
           			<span class="icon-phone2"></span>
           		</div>
           		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+ 971 56 401 9786</a></p>
+	            <p><a href="tel:+971564019786">+971 56 401 9786</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -808,7 +831,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">drsuvendu.iitm@gmail.com</a></p>
+	            <p><a href="mailto:drsuvendu.iitm@gmail.com">drsuvendu.iitm@gmail.com</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -833,7 +856,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
 					  <li class="ftco-animate normal-txt">Find me on  </li>
 					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/dr-suvendu-mohanty/"><span class="icon-linkedin"></span></a></li>  
+					  <p><a href="https://www.linkedin.com/in/dr-suvendu-mohanty/" target="_blank" rel="noopener" class="btn btn-primary py-3 px-3">LinkedIn</a></p>  
 					  <!-- <li class="ftco-animate"><a href="https://x.com/SMohanty89"><span class="icon-twitter"></span></a></li> -->
 					  <li class="ftco-animate"><a href="https://www.facebook.com/share/14vYcpRAAkt/"><span class="icon-facebook"></span></a></li>
 				      <li class="ftco-animate"><a href="https://www.instagram.com/suvu_mohanty?utm_source=qr&igsi=eWpuaXFuYnd4ZW9h"><span class="icon-instagram"></span></a></li>
