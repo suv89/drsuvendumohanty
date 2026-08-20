@@ -109,10 +109,10 @@
   transform: scale(1.1);
 }
 
-
 </style>
 
-	  /*======================================
+<style>
+/*======================================
 //--//-->   PUBLICATIONS
 ======================================*/
 .pub-card {
@@ -146,7 +146,6 @@
   box-shadow: 0 18px 40px rgba(0, 0, 0, .55);
 }
 .pub-card:hover::before { transform: scaleX(1); }
-
 .pub-num {
   position: absolute;
   top: 14px; right: 20px;
@@ -157,7 +156,6 @@
   transition: color .3s ease;
 }
 .pub-card:hover .pub-num { color: rgba(249, 109, 0, .25); }
-
 .pub-meta { margin-bottom: 14px; }
 .pub-meta > span {
   display: inline-block;
@@ -179,7 +177,6 @@
   color: rgba(255, 255, 255, .7);
   border: 1px solid rgba(255, 255, 255, .12);
 }
-
 .pub-title {
   font-size: 17px;
   line-height: 1.45;
@@ -189,14 +186,12 @@
   transition: color .3s ease;
 }
 .pub-card:hover .pub-title { color: #ffbd39; }
-
 .pub-authors {
   font-size: 13px;
   line-height: 1.6;
   color: rgba(255, 255, 255, .5);
   margin: 0 0 22px;
 }
-
 .pub-link {
   margin-top: auto;
   display: inline-block;
@@ -212,11 +207,8 @@
   transition: transform .3s ease;
 }
 .pub-card:hover .pub-arrow { transform: translateX(6px); }
-
-/* keeps the fixed navbar from covering section headings */
 section[id] { scroll-margin-top: 80px; }
-
-
+</style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
