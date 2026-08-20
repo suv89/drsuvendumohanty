@@ -112,6 +112,110 @@
 
 </style>
 
+	  /*======================================
+//--//-->   PUBLICATIONS
+======================================*/
+.pub-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 34px 28px 26px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none !important;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
+}
+.pub-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 3px; width: 100%;
+  background: linear-gradient(90deg, #F96D00, #ffbd39);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+.pub-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, .07);
+  border-color: rgba(249, 109, 0, .55);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .55);
+}
+.pub-card:hover::before { transform: scaleX(1); }
+
+.pub-num {
+  position: absolute;
+  top: 14px; right: 20px;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, .06);
+  transition: color .3s ease;
+}
+.pub-card:hover .pub-num { color: rgba(249, 109, 0, .25); }
+
+.pub-meta { margin-bottom: 14px; }
+.pub-meta > span {
+  display: inline-block;
+  margin: 0 6px 6px 0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.pub-journal {
+  background: rgba(249, 109, 0, .15);
+  color: #ffbd39;
+  border: 1px solid rgba(249, 109, 0, .35);
+}
+.pub-year {
+  background: rgba(255, 255, 255, .07);
+  color: rgba(255, 255, 255, .7);
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+
+.pub-title {
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 12px;
+  transition: color .3s ease;
+}
+.pub-card:hover .pub-title { color: #ffbd39; }
+
+.pub-authors {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .5);
+  margin: 0 0 22px;
+}
+
+.pub-link {
+  margin-top: auto;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: #F96D00;
+}
+.pub-arrow {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform .3s ease;
+}
+.pub-card:hover .pub-arrow { transform: translateX(6px); }
+
+/* keeps the fixed navbar from covering section headings */
+section[id] { scroll-margin-top: 80px; }
+
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -441,80 +545,89 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 
     <section class="ftco-section" id="Publications-section">
       <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-8 heading-section text-center ftco-animate">
             <h1 class="big big-2">Publications</h1>
             <h2 class="mb-4">Publications</h2>
-            <!-- <p>Below are the sample Data Analytics Projects on SQL, Python, Power BI & ML.</p> -->
+            <p>Peer-reviewed research on wear analysis, prognostics and predictive maintenance &mdash; click any card to open the full paper.</p>
           </div>
         </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <!-- <a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');"> -->
-              </a>
-              <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://drive.google.com/file/d/1zmg8KVe4zgve41qDiWItaUg3UHCts-eF/view?usp=drive_link">1. Mohanty, S., & Paul, S. (2025). Maintenance analytics for achieving sustainability using CNG as alternative fuel. Energy,329, 136722.</a></h3>
-                <!-- <p>Analyzed music store data using advanced SQL queires to identify gaps and increase the business growth.</p> -->
+        <div class="row justify-content-center">
+
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <a href="https://drive.google.com/file/d/1zmg8KVe4zgve41qDiWItaUg3UHCts-eF/view?usp=drive_link" target="_blank" rel="noopener" class="pub-card">
+              <span class="pub-num">01</span>
+              <div class="pub-meta">
+                <span class="pub-journal">Energy</span>
+                <span class="pub-year">2025</span>
               </div>
-            </div>
+              <h3 class="pub-title">Maintenance analytics for achieving sustainability using CNG as alternative fuel</h3>
+              <p class="pub-authors">Mohanty, S., &amp; Paul, S. &mdash; Energy, 329, 136722</p>
+              <span class="pub-link">View paper <span class="pub-arrow">&#8594;</span></span>
+            </a>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <!-- <a href="https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');"> -->
-              </a>
-              <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://drive.google.com/file/d/13PAC8JdRQmma83U0h-D_tJvf4oWMVUlg/view?usp=drive_link">2. Mohanty, S., & Paul, S. (2023). A frame work for comparative wear based failure analysis of CNG and diesel operated engines. Energy, 269, 126675.</a></h3>
-                <!-- <p>Performed exploratory data analysis on diwali sales data using Python to improve the customer experience.</p> -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <a href="https://drive.google.com/file/d/13PAC8JdRQmma83U0h-D_tJvf4oWMVUlg/view?usp=drive_link" target="_blank" rel="noopener" class="pub-card">
+              <span class="pub-num">02</span>
+              <div class="pub-meta">
+                <span class="pub-journal">Energy</span>
+                <span class="pub-year">2023</span>
               </div>
-            </div>
+              <h3 class="pub-title">A framework for comparative wear based failure analysis of CNG and diesel operated engines</h3>
+              <p class="pub-authors">Mohanty, S., &amp; Paul, S. &mdash; Energy, 269, 126675</p>
+              <span class="pub-link">View paper <span class="pub-arrow">&#8594;</span></span>
+            </a>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <!-- <a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');"> -->
-              </a>
-              <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://drive.google.com/file/d/1PaZ6CqiXU_9Hl8lEWf_my5OTxCNh7t7s/view?usp=drive_link">3. Mohanty, S., Hazra, S., & Paul, S. (2020). Intelligent prediction of engine failure through computational image analysis of wear particle. Engineering failure analysis, 116, 104731.</a></h3>
-                <!-- <p>Designed a power bi dashboard for Madhav Store to track and analyze the online sales data acorss India.</p> -->
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <a href="https://drive.google.com/file/d/1PaZ6CqiXU_9Hl8lEWf_my5OTxCNh7t7s/view?usp=drive_link" target="_blank" rel="noopener" class="pub-card">
+              <span class="pub-num">03</span>
+              <div class="pub-meta">
+                <span class="pub-journal">Eng. Failure Analysis</span>
+                <span class="pub-year">2020</span>
               </div>
-            </div>
+              <h3 class="pub-title">Intelligent prediction of engine failure through computational image analysis of wear particle</h3>
+              <p class="pub-authors">Mohanty, S., Hazra, S., &amp; Paul, S. &mdash; Engineering Failure Analysis, 116, 104731</p>
+              <span class="pub-link">View paper <span class="pub-arrow">&#8594;</span></span>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <a href="https://drive.google.com/file/d/1tG1GMrcUs5uxFNu_ef0jz6rrM7IDIxvp/view?usp=drive_link" target="_blank" rel="noopener" class="pub-card">
+              <span class="pub-num">04</span>
+              <div class="pub-meta">
+                <span class="pub-journal">Materials Today: Proc.</span>
+                <span class="pub-year">2022</span>
+              </div>
+              <h3 class="pub-title">Fractal mathematics applications for wear image analysis of engines using biofuels</h3>
+              <p class="pub-authors">Paul, S., Debnath, D., Doloi, S., &amp; Mohanty, S. &mdash; Materials Today: Proceedings, 66, 3784&ndash;3789</p>
+              <span class="pub-link">View paper <span class="pub-arrow">&#8594;</span></span>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <a href="https://drive.google.com/file/d/11GQyKrUkk7_pVjISkmy9oUskjNjsncdy/view?usp=drive_link" target="_blank" rel="noopener" class="pub-card">
+              <span class="pub-num">05</span>
+              <div class="pub-meta">
+                <span class="pub-journal">J. Bio- &amp; Tribo-Corrosion</span>
+                <span class="pub-year">2020</span>
+              </div>
+              <h3 class="pub-title">Experimental investigation of tribo-corrosive nature of biodiesel and its effect on lubricating system</h3>
+              <p class="pub-authors">Gupta, T., Bhattacharjee, B., Mohanty, S., Acharjee, A., &amp; Chakraborti, P. &mdash; Journal of Bio- and Tribo-Corrosion, 6(4), 119</p>
+              <span class="pub-link">View paper <span class="pub-arrow">&#8594;</span></span>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-6 text-center ftco-animate">
+            <p><a href="https://scholar.google.co.in/citations?user=-yykA-wAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="btn btn-primary py-4 px-5">Google Scholar</a></p>
           </div>
         </div>
-	<br>
-		<!-- added justify-content-center to center align the last two projects -->
-		<div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<!-- <a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');"> -->
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://drive.google.com/file/d/1tG1GMrcUs5uxFNu_ef0jz6rrM7IDIxvp/view?usp=drive_link">4. Paul, S., Debnath, D., Doloi, S., & Mohanty, S. (2022). Fractal mathematics applications for wear image analysis of engines using biofuels. Materials Today: Proceedings, 66, 3784-3789.</a></h3>
-				  <!-- <p>Used multiple machine learning models to forecast sales (retail store) and performed time series analysis.</p> -->
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<!-- <a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');"> -->
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://drive.google.com/file/d/11GQyKrUkk7_pVjISkmy9oUskjNjsncdy/view?usp=drive_link">5. Gupta, T., Bhattacharjee, B., Mohanty, S., Acharjee, A., & Chakraborti, P. (2020). Experimental investigation of tribo-corrosive nature of biodiesel and its effect on lubricating system. Journal of Bio-and Tribo-Corrosion, 6(4), 119.</a></h3>
-				  <!-- <p>Developed a ML model to give various recommendations of financial products &amp; services on target customer groups.</p> -->
-				</div>
-			  </div>
-			</div>
-		 </div>
-	  </div>
-	  <div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://scholar.google.co.in/citations?user=-yykA-wAAAAJ&hl=en" class="btn btn-primary py-4 px-5">Google Scholar</a></p>
-    			</div>
-    		</div>
+      </div>
     </section>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
