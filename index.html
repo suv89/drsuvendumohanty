@@ -365,7 +365,81 @@ section[id] { scroll-margin-top: 80px; }
 }
 #contact-section { padding-bottom: 40px; }
 </style>
-	  
+<style>
+/*======================================
+//--//-->   CONTACT CARDS
+======================================*/
+#contact-section .contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 32px 20px 28px;
+  margin-bottom: 30px;
+  background: linear-gradient(160deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.015) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
+}
+#contact-section .contact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249,109,0,.5);
+  box-shadow: 0 18px 40px rgba(0,0,0,.55);
+  background: linear-gradient(160deg, rgba(255,255,255,.075) 0%, rgba(249,109,0,.05) 100%);
+}
+#contact-section .contact-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  color: #ffbd39;
+  background: rgba(249,109,0,.12);
+  border: 1px solid rgba(249,109,0,.3);
+  transition: all .3s ease;
+}
+#contact-section .contact-card:hover .contact-card__icon {
+  background: linear-gradient(135deg, #F96D00, #ffbd39);
+  border-color: transparent;
+  color: #111;
+  box-shadow: 0 8px 20px rgba(249,109,0,.38);
+}
+#contact-section .contact-card__label {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+#contact-section .contact-card__value {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: #fff;
+  word-break: break-word;
+}
+#contact-section .contact-card__cta {
+  margin-top: 14px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #F96D00;
+}
+#contact-section .contact-card__cta .arw {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform .3s ease;
+}
+#contact-section .contact-card:hover .contact-card__cta .arw { transform: translateX(5px); }
+</style>	  
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -844,7 +918,49 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
         </div>
 
         <div class="row d-flex contact-info mb-5">
+                    <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <a class="contact-card" href="https://www.google.com/maps/search/?api=1&amp;query=Silicon+Oasis+Dubai" target="_blank" rel="noopener">
+              <span class="contact-card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              </span>
+              <h3 class="contact-card__label">Address</h3>
+              <p class="contact-card__value">Place Tower 2, Silicon Oasis, Dubai</p>
+              <span class="contact-card__cta">View on map <span class="arw">&#8594;</span></span>
+            </a>
+          </div>
+
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <a class="contact-card" href="tel:+971564019786">
+              <span class="contact-card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg>
+              </span>
+              <h3 class="contact-card__label">Phone</h3>
+              <p class="contact-card__value">+971 56 401 9786</p>
+              <span class="contact-card__cta">Call now <span class="arw">&#8594;</span></span>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <a class="contact-card" href="mailto:drsuvendu.iitm@gmail.com">
+              <span class="contact-card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+              </span>
+              <h3 class="contact-card__label">Email</h3>
+              <p class="contact-card__value">drsuvendu.iitm@gmail.com</p>
+              <span class="contact-card__cta">Write to me <span class="arw">&#8594;</span></span>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <a class="contact-card" href="https://drive.google.com/file/d/1IGgQW2IgaYhmpPVbuEyQ9yeXlccs9hvL/view?usp=drive_link" target="_blank" rel="noopener">
+              <span class="contact-card__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11.5v5.5m0 0-2.4-2.4M12 17l2.4-2.4"/></svg>
+              </span>
+              <h3 class="contact-card__label">Curriculum Vitae</h3>
+              <p class="contact-card__value">Full academic CV (PDF)</p>
+              <span class="contact-card__cta">Download <span class="arw">&#8594;</span></span>
+            </a>
+          </div>
           	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-map-signs"></span>
