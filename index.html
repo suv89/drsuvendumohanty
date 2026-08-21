@@ -757,7 +757,355 @@ section[id] { scroll-margin-top: 80px; }
   #phil-lightbox .phil-lb-btn { width: 40px; height: 40px; }
 }
 </style>
-	  
+	  <style>
+/*======================================
+//--//-->   SELECTED COLLABORATIVE PROJECTS
+======================================*/
+#projects-section { position: relative; overflow: hidden; }
+#projects-section::before {
+  content: "";
+  position: absolute;
+  top: 18%; left: -14%;
+  width: 460px; height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249,109,0,.11) 0%, rgba(249,109,0,0) 70%);
+  pointer-events: none;
+}
+
+/* ---------- list ---------- */
+#projects-section .cp-list { display: flex; flex-direction: column; gap: 26px; }
+
+#projects-section .cp-card {
+  position: relative; overflow: hidden;
+  display: grid;
+  grid-template-columns: 268px 1fr;
+  background: linear-gradient(150deg, rgba(255,255,255,.055) 0%, rgba(255,255,255,.016) 55%, rgba(249,109,0,.035) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+#projects-section .cp-card::before {
+  content: ""; position: absolute; top: 0; left: 0; height: 3px; width: 100%;
+  background: linear-gradient(90deg, #F96D00, #ffbd39);
+  transform: scaleX(0); transform-origin: left; transition: transform .45s ease;
+  z-index: 3;
+}
+#projects-section .cp-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(249,109,0,.45);
+  box-shadow: 0 22px 50px rgba(0,0,0,.6);
+}
+#projects-section .cp-card:hover::before { transform: scaleX(1); }
+
+/* ghost index number */
+#projects-section .cp-num {
+  position: absolute; top: 10px; right: 24px;
+  font-size: 62px; font-weight: 700; line-height: 1;
+  color: rgba(255,255,255,.045);
+  transition: color .35s ease;
+  pointer-events: none;
+}
+#projects-section .cp-card:hover .cp-num { color: rgba(249,109,0,.18); }
+
+/* ---------- left rail ---------- */
+#projects-section .cp-side {
+  position: relative;
+  padding: 30px 26px 28px;
+  border-right: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,.022);
+}
+#projects-section .cp-side::after {
+  content: ""; position: absolute; top: 30px; bottom: 28px; left: 0; width: 2px;
+  background: linear-gradient(180deg, #F96D00, #ffbd39);
+  opacity: .55;
+}
+#projects-section .cp-eyebrow {
+  display: block; margin-bottom: 9px;
+  font-size: 9.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+}
+#projects-section .cp-partner {
+  display: block; margin-bottom: 4px;
+  font-size: 16px; font-weight: 600; line-height: 1.3; color: #fff;
+}
+#projects-section .cp-host {
+  display: block; margin-bottom: 18px;
+  font-size: 11.5px; font-weight: 500; letter-spacing: .04em;
+  color: #ffbd39;
+}
+#projects-section .cp-date {
+  display: inline-block;
+  padding: 5px 12px; border-radius: 20px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.11);
+}
+#projects-section .cp-live {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 9px;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase;
+  color: #111; background: linear-gradient(135deg, #F96D00, #ffbd39);
+}
+#projects-section .cp-live i {
+  width: 6px; height: 6px; border-radius: 50%; background: #111;
+  animation: cp-blink 1.6s ease-in-out infinite;
+}
+@keyframes cp-blink { 50% { opacity: .25; } }
+
+/* ---------- body ---------- */
+#projects-section .cp-body { padding: 30px 32px 28px; }
+#projects-section .cp-title {
+  font-size: 20px; line-height: 1.35; font-weight: 600;
+  color: #fff; margin: 0 0 18px;
+  padding-right: 70px;
+  transition: color .3s ease;
+}
+#projects-section .cp-card:hover .cp-title { color: #ffbd39; }
+
+#projects-section .cp-points { list-style: none; margin: 0 0 22px; padding: 0; }
+#projects-section .cp-points li {
+  position: relative; padding-left: 21px; margin-bottom: 11px;
+  font-size: 13.5px; line-height: 1.68; color: rgba(255,255,255,.72);
+}
+#projects-section .cp-points li:last-child { margin-bottom: 0; }
+#projects-section .cp-points li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 7px; height: 7px; border-radius: 2px;
+  background: linear-gradient(135deg, #F96D00, #ffbd39);
+  transform: rotate(45deg);
+}
+#projects-section .cp-hl { color: #ffbd39; font-weight: 600; }
+
+/* ---------- schematic figure ---------- */
+#projects-section .cp-fig {
+  position: relative;
+  margin: 0 0 22px;
+  padding: 16px 16px 13px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  background:
+    linear-gradient(rgba(6,6,9,.6), rgba(6,6,9,.6)),
+    repeating-linear-gradient(0deg,  rgba(255,255,255,.035) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 26px);
+  transition: border-color .35s ease;
+}
+#projects-section .cp-card:hover .cp-fig { border-color: rgba(249,109,0,.28); }
+#projects-section .cp-fig__scroll { overflow-x: auto; }
+#projects-section .cp-fig svg { display: block; width: 100%; min-width: 540px; height: auto; }
+#projects-section .cp-figcap {
+  display: flex; align-items: center; gap: 8px;
+  margin: 11px 0 0;
+  font-size: 9.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+}
+#projects-section .cp-figcap::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; flex: none;
+  background: #F96D00; box-shadow: 0 0 8px rgba(249,109,0,.9);
+  animation: cp-blink 1.6s ease-in-out infinite;
+}
+
+/* ---------- diagram primitives ---------- */
+#projects-section .dg-box   { fill: rgba(255,255,255,.045); stroke: rgba(255,255,255,.15); stroke-width: 1; }
+#projects-section .dg-ico   { fill: none; stroke: #ffbd39; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+#projects-section .dg-dim   { fill: none; stroke: rgba(255,255,255,.35); stroke-width: 1.2; stroke-linecap: round; }
+#projects-section .dg-fill  { fill: rgba(249,109,0,.7); stroke: none; }
+#projects-section .dg-fill2 { fill: rgba(255,255,255,.28); stroke: none; }
+#projects-section .dg-lbl {
+  fill: rgba(255,255,255,.68); font-family: 'Poppins', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: .05em; text-anchor: middle;
+}
+#projects-section .dg-sub {
+  fill: rgba(255,255,255,.36); font-family: 'Poppins', sans-serif;
+  font-size: 8.5px; font-weight: 500; letter-spacing: .04em; text-anchor: middle;
+}
+#projects-section .dg-tag {
+  fill: #ffbd39; font-family: 'Poppins', sans-serif;
+  font-size: 8.5px; font-weight: 600; letter-spacing: .08em;
+}
+
+/*======================================
+//--//-->   LIVE ANIMATION
+======================================*/
+#projects-section svg [class*="dg-"] { transform-box: fill-box; }
+
+/* flowing connector arrows */
+#projects-section .dg-arrow {
+  fill: none; stroke: rgba(249,109,0,.75); stroke-width: 1.4;
+  stroke-dasharray: 4 4;
+  animation: dg-flow 1s linear infinite;
+}
+@keyframes dg-flow { to { stroke-dashoffset: -16; } }
+
+/* oil drip */
+#projects-section .dg-drip { animation: dg-drip 2.2s cubic-bezier(.5,0,.9,.4) infinite; }
+@keyframes dg-drip {
+  0%, 55%  { transform: translateY(0);   opacity: 0; }
+  60%      { transform: translateY(0);   opacity: 1; }
+  95%      { transform: translateY(11px); opacity: 1; }
+  100%     { transform: translateY(12px); opacity: 0; }
+}
+
+/* camera lens + capture flash */
+#projects-section .dg-lens  { transform-origin: 50% 50%; animation: dg-lens 2.2s ease-in-out infinite; }
+@keyframes dg-lens { 0%,70%,100% { transform: scale(1); } 78% { transform: scale(.45); } 86% { transform: scale(1.15); } }
+#projects-section .dg-flash { animation: dg-flash 2.2s ease-out infinite; }
+@keyframes dg-flash { 0%,74% { opacity: 0; } 78% { opacity: .55; } 100% { opacity: 0; } }
+
+/* segmentation scan + detection boxes */
+#projects-section .dg-scan { animation: dg-scan 2.6s ease-in-out infinite; }
+@keyframes dg-scan {
+  0%   { transform: translateY(2px);  opacity: 0; }
+  10%  { opacity: .9; }
+  70%  { transform: translateY(32px); opacity: .9; }
+  85%, 100% { transform: translateY(32px); opacity: 0; }
+}
+#projects-section .dg-det { opacity: 0; animation: dg-det 2.6s ease-out infinite; }
+@keyframes dg-det {
+  0%, 24% { opacity: 0; transform: scale(1.5); }
+  32%     { opacity: 1; transform: scale(1); }
+  88%     { opacity: 1; transform: scale(1); }
+  100%    { opacity: 0; transform: scale(1); }
+}
+
+/* scatter points popping in */
+#projects-section .dg-pop { transform-origin: 50% 50%; animation: dg-pop 3.4s ease-out infinite; }
+@keyframes dg-pop {
+  0%   { transform: scale(0); opacity: 0; }
+  8%   { transform: scale(1.6); opacity: 1; }
+  14%  { transform: scale(1); opacity: 1; }
+  88%  { transform: scale(1); opacity: 1; }
+  97%  { transform: scale(1); opacity: 0; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+/* self-drawing trend / curve */
+#projects-section .dg-draw { stroke-dasharray: 340; animation: dg-draw 3.4s ease-in-out infinite; }
+@keyframes dg-draw {
+  0%   { stroke-dashoffset: 340; }
+  40%  { stroke-dashoffset: 0; }
+  90%  { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* gauge needle sweep */
+#projects-section .dg-needle { transform-origin: 0% 100%; animation: dg-needle 3s ease-in-out infinite alternate; }
+@keyframes dg-needle { 0% { transform: rotate(-52deg); } 100% { transform: rotate(18deg); } }
+
+/* bearing rotation */
+#projects-section .dg-orbit { transform-origin: 50% 50%; animation: dg-spin 5.5s linear infinite; }
+#projects-section .dg-shaft { transform-origin: 50% 50%; animation: dg-spin 2.2s linear infinite; }
+@keyframes dg-spin { to { transform: rotate(360deg); } }
+
+/* accelerometer emission */
+#projects-section .dg-wave { animation: dg-wave 1.4s ease-out infinite; }
+@keyframes dg-wave { 0% { opacity: 0; } 25% { opacity: .85; } 100% { opacity: 0; } }
+
+/* scrolling vibration trace */
+#projects-section .dg-scroll { animation: dg-scroll 1.15s linear infinite; }
+@keyframes dg-scroll { to { transform: translateX(-30px); } }
+
+/* spectrum bars */
+#projects-section .dg-bar  { transform-origin: 50% 100%; animation: dg-bar 1.5s ease-in-out infinite alternate; }
+@keyframes dg-bar { 0% { transform: scaleY(.45); } 100% { transform: scaleY(1.15); } }
+#projects-section .dg-peak { transform-origin: 50% 100%; animation: dg-peak 1.9s ease-in-out infinite alternate; }
+@keyframes dg-peak { 0% { transform: scaleY(.86); opacity: .8; } 100% { transform: scaleY(1.04); opacity: 1; } }
+#projects-section .dg-sweep { animation: dg-sweep 3.2s linear infinite; }
+@keyframes dg-sweep {
+  0%   { transform: translateX(0);   opacity: 0; }
+  8%   { opacity: .75; }
+  92%  { opacity: .75; }
+  100% { transform: translateX(112px); opacity: 0; }
+}
+
+/* classification progress + tick */
+#projects-section .dg-progress { transform-origin: 0% 50%; animation: dg-progress 3.2s ease-in-out infinite; }
+@keyframes dg-progress {
+  0%   { transform: scaleX(0); }
+  35%  { transform: scaleX(1); }
+  90%  { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+#projects-section .dg-tick { stroke-dasharray: 22; animation: dg-tick 3.2s ease-out infinite; }
+@keyframes dg-tick {
+  0%, 35% { stroke-dashoffset: 22; }
+  50%     { stroke-dashoffset: 0; }
+  90%     { stroke-dashoffset: 0; opacity: 1; }
+  100%    { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* prognostics story (shared 7s timeline) */
+#projects-section .dg-hist { stroke-dasharray: 340; animation: dg-hist 7s ease-in-out infinite; }
+@keyframes dg-hist { 0% { stroke-dashoffset: 340; } 22% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
+#projects-section .dg-pred { stroke-dasharray: 5 4; animation: dg-pred 7s ease-in-out infinite, dg-march 1.1s linear infinite; }
+@keyframes dg-pred { 0%, 24% { opacity: 0; } 40% { opacity: 1; } 100% { opacity: 1; } }
+@keyframes dg-march { to { stroke-dashoffset: -18; } }
+#projects-section .dg-band { animation: dg-band 7s ease-in-out infinite; }
+@keyframes dg-band { 0%, 38% { opacity: 0; } 52% { opacity: 1; } 100% { opacity: 1; } }
+#projects-section .dg-rul { animation: dg-rul 7s ease-in-out infinite; }
+@keyframes dg-rul { 0%, 50% { opacity: 0; } 62% { opacity: 1; } 100% { opacity: 1; } }
+#projects-section .dg-obs { transform-origin: 50% 50%; animation: dg-obs 7s ease-out infinite; }
+@keyframes dg-obs {
+  0%  { transform: scale(0); opacity: 0; }
+  6%  { transform: scale(1.7); opacity: 1; }
+  10% { transform: scale(1); opacity: 1; }
+  100%{ transform: scale(1); opacity: 1; }
+}
+#projects-section .dg-travel { animation: dg-travel 7s cubic-bezier(.5,0,.5,1) infinite; }
+@keyframes dg-travel {
+  0%, 60%  { transform: translateX(0);     opacity: 0; }
+  64%      { transform: translateX(0);     opacity: 1; }
+  86%      { transform: translateX(130px); opacity: 1; }
+  92%,100% { transform: translateX(130px); opacity: 0; }
+}
+#projects-section .dg-arrive { animation: dg-arrive 7s ease-out infinite; }
+@keyframes dg-arrive { 0%, 84% { opacity: .35; } 90% { opacity: 1; } 100% { opacity: 1; } }
+#projects-section .dg-pulse { animation: dg-pulse 2s ease-in-out infinite; }
+@keyframes dg-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+
+/* accessibility — honour the OS "reduce motion" setting */
+@media (prefers-reduced-motion: reduce) {
+  #projects-section svg *, #projects-section .cp-figcap::before, #projects-section .cp-live i {
+    animation: none !important;
+  }
+  #projects-section .dg-det, #projects-section .dg-pop,
+  #projects-section .dg-pred, #projects-section .dg-band,
+  #projects-section .dg-rul, #projects-section .dg-obs { opacity: 1; }
+  #projects-section .dg-draw, #projects-section .dg-hist,
+  #projects-section .dg-tick { stroke-dasharray: none; }
+}
+
+/* ---------- tags ---------- */
+#projects-section .cp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+#projects-section .cp-tags li {
+  padding: 5px 12px; border-radius: 6px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.09);
+  transition: all .3s ease;
+}
+#projects-section .cp-card:hover .cp-tags li {
+  color: #ffbd39;
+  border-color: rgba(249,109,0,.32);
+  background: rgba(249,109,0,.09);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 767px) {
+  #projects-section .cp-card { grid-template-columns: 1fr; }
+  #projects-section .cp-side {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    padding: 24px 22px 22px;
+  }
+  #projects-section .cp-side::after { top: 24px; bottom: auto; height: 44px; }
+  #projects-section .cp-body { padding: 24px 22px; }
+  #projects-section .cp-title { font-size: 17.5px; padding-right: 0; }
+  #projects-section .cp-num { font-size: 46px; top: 8px; right: 18px; }
+}
+</style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -775,6 +1123,7 @@ section[id] { scroll-margin-top: 80px; }
   <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
   <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
   <li class="nav-item"><a href="#Publications-section" class="nav-link"><span>Publications</span></a></li>
+  <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
   <li class="nav-item"><a href="#philanthropy-section" class="nav-link"><span>Philanthropy</span></a></li>
   <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 </ul>
@@ -1197,6 +1546,375 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
       </div>
     </section>
 
+	  <section class="ftco-section" id="projects-section">
+  <div class="container">
+
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-9 heading-section text-center ftco-animate">
+        <h1 class="big big-2">Projects</h1>
+        <h2 class="mb-4">Selected Collaborative Projects</h2>
+        <p>Industry&ndash;academia work carried out at IIT Madras with aerospace, industrial-automation and retail-operations partners &mdash; translating condition-monitoring data into diagnostics, prognostics and maintenance decision support.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="cp-list">
+
+          <!-- ==================== 01 · HAL ==================== -->
+          <article class="cp-card ftco-animate">
+            <span class="cp-num">01</span>
+            <div class="cp-side">
+              <span class="cp-eyebrow">In collaboration with</span>
+              <span class="cp-partner">Hindustan Aeronautics Limited (HAL)</span>
+              <span class="cp-host">IIT Madras</span>
+              <span class="cp-date">Aug 2025 &ndash; Aug 2026</span>
+              <!-- delete the next line once the project is complete -->
+              <span class="cp-live"><i></i> Ongoing</span>
+            </div>
+            <div class="cp-body">
+              <h3 class="cp-title">Diagnostics and Prognostics Software Development</h3>
+              <ul class="cp-points">
+                <li>Developed <span class="cp-hl">image-based wear-debris characterization</span> approaches for early-stage mechanical failure diagnosis.</li>
+                <li>Applied RGB image acquisition and image-processing methods to characterize wear-particle size, shape and morphology.</li>
+              </ul>
+
+              <figure class="cp-fig">
+                <div class="cp-fig__scroll">
+                  <svg viewBox="0 0 700 148" role="img" aria-label="Animated schematic of the wear-debris image characterization pipeline: oil sample, RGB imaging, particle segmentation, morphology features, wear diagnosis">
+                    <defs>
+                      <marker id="cpA1" markerWidth="7" markerHeight="7" refX="6.2" refY="3.5" orient="auto">
+                        <path d="M0 0 L7 3.5 L0 7 Z" fill="rgba(249,109,0,.85)"/>
+                      </marker>
+                      <clipPath id="cpClip1"><rect x="329" y="41" width="42" height="34" rx="3"/></clipPath>
+                    </defs>
+
+                    <!-- 1 · oil sample -->
+                    <rect class="dg-box" x="10" y="14" width="120" height="80" rx="10"/>
+                    <path class="dg-ico" d="M70 32 C80 45 84 52 84 58 A14 14 0 0 1 56 58 C56 52 60 45 70 32 Z"/>
+                    <ellipse class="dg-drip dg-fill" cx="70" cy="74" rx="2.6" ry="3.4"/>
+                    <path class="dg-dim" d="M54 88 H86"/>
+                    <text class="dg-lbl" x="70" y="115">Oil Sample</text>
+                    <text class="dg-sub" x="70" y="129">In-service asset</text>
+
+                    <!-- 2 · RGB imaging -->
+                    <rect class="dg-box" x="150" y="14" width="120" height="80" rx="10"/>
+                    <rect class="dg-ico" x="188" y="44" width="44" height="30" rx="4"/>
+                    <path class="dg-ico" d="M202 44 v-5 h12 v5"/>
+                    <rect class="dg-flash" x="189" y="45" width="42" height="28" rx="3" fill="#ffbd39"/>
+                    <circle class="dg-ico" cx="210" cy="59" r="8"/>
+                    <circle class="dg-lens dg-fill" cx="210" cy="59" r="3.4"/>
+                    <text class="dg-lbl" x="210" y="115">RGB Imaging</text>
+                    <text class="dg-sub" x="210" y="129">Image acquisition</text>
+
+                    <!-- 3 · segmentation -->
+                    <rect class="dg-box" x="290" y="14" width="120" height="80" rx="10"/>
+                    <rect class="dg-ico" x="328" y="40" width="44" height="36" rx="3"/>
+                    <ellipse class="dg-fill" cx="340" cy="52" rx="6" ry="3.6" transform="rotate(-28 340 52)"/>
+                    <path class="dg-fill" d="M354 62 l7 -4 5 6 -4 6 -7 -1 Z"/>
+                    <circle class="dg-fill2" cx="340" cy="67" r="3.4"/>
+                    <ellipse class="dg-fill2" cx="359" cy="47" rx="4.4" ry="2.6" transform="rotate(24 359 47)"/>
+                    <g clip-path="url(#cpClip1)">
+                      <rect class="dg-scan" x="329" y="41" width="42" height="2" fill="#ffbd39" opacity=".9"/>
+                    </g>
+                    <rect class="dg-det" x="332" y="45" width="17" height="14" rx="1.5" fill="none" stroke="#ffbd39" stroke-width="1" stroke-dasharray="3 2"/>
+                    <rect class="dg-det" x="351" y="55" width="18" height="17" rx="1.5" fill="none" stroke="#ffbd39" stroke-width="1" stroke-dasharray="3 2" style="animation-delay:.28s"/>
+                    <rect class="dg-det" x="335" y="62" width="11" height="11" rx="1.5" fill="none" stroke="#ffbd39" stroke-width="1" stroke-dasharray="3 2" style="animation-delay:.56s"/>
+                    <text class="dg-lbl" x="350" y="115">Segmentation</text>
+                    <text class="dg-sub" x="350" y="129">Particle isolation</text>
+
+                    <!-- 4 · morphology features -->
+                    <rect class="dg-box" x="430" y="14" width="120" height="80" rx="10"/>
+                    <path class="dg-dim" d="M472 78 V36 M472 78 H514"/>
+                    <path class="dg-draw dg-ico" d="M477 73 L509 42" stroke-width="1.3" stroke-dasharray="340"/>
+                    <circle class="dg-pop dg-fill" cx="482" cy="67" r="3"/>
+                    <circle class="dg-pop dg-fill" cx="493" cy="57" r="3" style="animation-delay:.3s"/>
+                    <circle class="dg-pop dg-fill" cx="504" cy="47" r="3" style="animation-delay:.6s"/>
+                    <circle class="dg-pop dg-fill2" cx="488" cy="63" r="2.4" style="animation-delay:.15s"/>
+                    <circle class="dg-pop dg-fill2" cx="499" cy="58" r="2.4" style="animation-delay:.45s"/>
+                    <text class="dg-lbl" x="490" y="115">Morphology</text>
+                    <text class="dg-sub" x="490" y="129">Size · shape · texture</text>
+
+                    <!-- 5 · diagnosis -->
+                    <rect class="dg-box" x="570" y="14" width="120" height="80" rx="10"/>
+                    <path class="dg-ico" d="M612 70 A18 18 0 0 1 648 70"/>
+                    <path class="dg-dim" d="M614 62 l3 -2 M630 51 v-3 M646 62 l-3 -2"/>
+                    <path class="dg-needle dg-ico" d="M630 70 L644 54" stroke-width="2"/>
+                    <circle class="dg-fill" cx="630" cy="70" r="3.4"/>
+                    <path class="dg-dim" d="M614 78 H646"/>
+                    <text class="dg-lbl" x="630" y="115">Diagnosis</text>
+                    <text class="dg-sub" x="630" y="129">Wear mode &amp; severity</text>
+
+                    <!-- flow arrows -->
+                    <path class="dg-arrow" marker-end="url(#cpA1)" d="M132 54 H146"/>
+                    <path class="dg-arrow" marker-end="url(#cpA1)" d="M272 54 H286"/>
+                    <path class="dg-arrow" marker-end="url(#cpA1)" d="M412 54 H426"/>
+                    <path class="dg-arrow" marker-end="url(#cpA1)" d="M552 54 H566"/>
+                  </svg>
+                </div>
+                <figcaption class="cp-figcap">Schematic &mdash; wear-debris characterization pipeline</figcaption>
+              </figure>
+
+              <ul class="cp-tags">
+                <li>Wear-Debris Analysis</li>
+                <li>RGB Image Processing</li>
+                <li>Morphology Characterization</li>
+                <li>Failure Diagnosis</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ==================== 02 · Honeywell ==================== -->
+          <article class="cp-card ftco-animate">
+            <span class="cp-num">02</span>
+            <div class="cp-side">
+              <span class="cp-eyebrow">In collaboration with</span>
+              <span class="cp-partner">Honeywell International</span>
+              <span class="cp-host">IIT Madras</span>
+              <span class="cp-date">Dec 2024 &ndash; May 2025</span>
+            </div>
+            <div class="cp-body">
+              <h3 class="cp-title">Vibration Analysis of Rolling Element Bearings</h3>
+              <ul class="cp-points">
+                <li>Investigated vibration and other <span class="cp-hl">condition-monitoring signals</span> for mechanical fault diagnosis.</li>
+                <li>Applied data-driven methods to support predictive maintenance and asset-health assessment.</li>
+              </ul>
+
+              <figure class="cp-fig">
+                <div class="cp-fig__scroll">
+                  <svg viewBox="0 0 700 148" role="img" aria-label="Animated schematic of the bearing vibration analysis chain: a rotating instrumented bearing, scrolling time-domain vibration signal, envelope spectrum with defect frequencies, and fault classification">
+                    <defs>
+                      <marker id="cpA2" markerWidth="7" markerHeight="7" refX="6.2" refY="3.5" orient="auto">
+                        <path d="M0 0 L7 3.5 L0 7 Z" fill="rgba(249,109,0,.85)"/>
+                      </marker>
+                      <clipPath id="cpClip2"><rect x="200" y="26" width="124" height="62"/></clipPath>
+                      <clipPath id="cpClip3"><rect x="382" y="30" width="112" height="50"/></clipPath>
+                    </defs>
+
+                    <!-- 1 · instrumented bearing -->
+                    <rect class="dg-box" x="10" y="14" width="152" height="80" rx="10"/>
+                    <circle class="dg-dim" cx="86" cy="57" r="29"/>
+                    <circle class="dg-ico" cx="86" cy="57" r="25"/>
+                    <g class="dg-orbit">
+                      <circle class="dg-fill" cx="86" cy="39" r="4"/>
+                      <circle class="dg-fill" cx="102" cy="48" r="4"/>
+                      <circle class="dg-fill" cx="102" cy="66" r="4"/>
+                      <circle class="dg-fill" cx="86" cy="75" r="4"/>
+                      <circle class="dg-fill" cx="70" cy="66" r="4"/>
+                      <circle class="dg-fill" cx="70" cy="48" r="4"/>
+                    </g>
+                    <g class="dg-shaft">
+                      <circle class="dg-ico" cx="86" cy="57" r="11"/>
+                      <path class="dg-ico" d="M86 46 V68" stroke-width="1.2" opacity=".7"/>
+                    </g>
+                    <rect class="dg-ico" x="119" y="24" width="15" height="11" rx="2"/>
+                    <path class="dg-dim" d="M119 35 L107 44"/>
+                    <path class="dg-wave" d="M137 26 a7 7 0 0 1 0 8" fill="none" stroke="#ffbd39" stroke-width="1.3" stroke-linecap="round"/>
+                    <path class="dg-wave" d="M141 22 a12 12 0 0 1 0 16" fill="none" stroke="#ffbd39" stroke-width="1.3" stroke-linecap="round" style="animation-delay:.25s"/>
+                    <text class="dg-lbl" x="86" y="115">Bearing</text>
+                    <text class="dg-sub" x="86" y="129">Instrumented rig</text>
+
+                    <!-- 2 · scrolling time-domain signal -->
+                    <rect class="dg-box" x="186" y="14" width="152" height="80" rx="10"/>
+                    <path class="dg-dim" d="M200 57 H324" opacity=".45"/>
+                    <g clip-path="url(#cpClip2)">
+                      <g class="dg-scroll">
+                        <path class="dg-ico" stroke-width="1.4" fill="none"
+                              d="M176 57 q3 -18 6 0 q3 12 6 0 q3 -8 6 0 q3 5 6 0 q3 -2 6 0
+                                 q3 -18 6 0 q3 12 6 0 q3 -8 6 0 q3 5 6 0 q3 -2 6 0
+                                 q3 -18 6 0 q3 12 6 0 q3 -8 6 0 q3 5 6 0 q3 -2 6 0
+                                 q3 -18 6 0 q3 12 6 0 q3 -8 6 0 q3 5 6 0 q3 -2 6 0
+                                 q3 -18 6 0 q3 12 6 0 q3 -8 6 0 q3 5 6 0 q3 -2 6 0
+                                 q3 -18 6 0 q3 12 6 0 q3 -8 6 0 q3 5 6 0 q3 -2 6 0"/>
+                      </g>
+                    </g>
+                    <path class="dg-dim dg-pulse" d="M262 28 V86" stroke-dasharray="2 4"/>
+                    <text class="dg-tag" x="236" y="25">periodic impacts</text>
+                    <text class="dg-lbl" x="262" y="115">Vibration Signal</text>
+                    <text class="dg-sub" x="262" y="129">Time domain</text>
+
+                    <!-- 3 · envelope spectrum -->
+                    <rect class="dg-box" x="362" y="14" width="152" height="80" rx="10"/>
+                    <path class="dg-dim" d="M382 78 V32 M382 78 H494"/>
+                    <g class="dg-fill2">
+                      <rect class="dg-bar" x="388" y="71" width="3" height="7"/>
+                      <rect class="dg-bar" x="396" y="73" width="3" height="5" style="animation-delay:.2s"/>
+                      <rect class="dg-bar" x="412" y="70" width="3" height="8" style="animation-delay:.5s"/>
+                      <rect class="dg-bar" x="420" y="74" width="3" height="4" style="animation-delay:.9s"/>
+                      <rect class="dg-bar" x="428" y="72" width="3" height="6" style="animation-delay:.35s"/>
+                      <rect class="dg-bar" x="444" y="69" width="3" height="9" style="animation-delay:.7s"/>
+                      <rect class="dg-bar" x="452" y="74" width="3" height="4" style="animation-delay:.15s"/>
+                      <rect class="dg-bar" x="460" y="73" width="3" height="5" style="animation-delay:.6s"/>
+                      <rect class="dg-bar" x="476" y="71" width="3" height="7" style="animation-delay:.45s"/>
+                      <rect class="dg-bar" x="484" y="74" width="3" height="4" style="animation-delay:.8s"/>
+                    </g>
+                    <g class="dg-fill">
+                      <rect class="dg-peak" x="404" y="46" width="3.5" height="32"/>
+                      <rect class="dg-peak" x="436" y="54" width="3.5" height="24" style="animation-delay:.3s"/>
+                      <rect class="dg-peak" x="468" y="61" width="3.5" height="17" style="animation-delay:.6s"/>
+                    </g>
+                    <path class="dg-dim" d="M405 42 H470" stroke-dasharray="3 3" opacity=".55"/>
+                    <text class="dg-tag" x="398" y="39">BPFO</text>
+                    <g clip-path="url(#cpClip3)">
+                      <rect class="dg-sweep" x="382" y="30" width="2" height="48" fill="#ffbd39"/>
+                    </g>
+                    <text class="dg-lbl" x="438" y="115">Envelope Spectrum</text>
+                    <text class="dg-sub" x="438" y="129">Defect frequencies</text>
+
+                    <!-- 4 · classification -->
+                    <rect class="dg-box" x="538" y="14" width="152" height="80" rx="10"/>
+                    <rect class="dg-dim" x="566" y="34" width="96" height="13" rx="3"/>
+                    <rect class="dg-dim" x="566" y="51" width="96" height="13" rx="3"/>
+                    <rect class="dg-dim" x="566" y="68" width="96" height="13" rx="3"/>
+                    <rect class="dg-progress dg-fill" x="566" y="51" width="70" height="13" rx="3"/>
+                    <path class="dg-tick dg-ico" d="M668 55 l3.5 4.5 7 -9" stroke-width="2"/>
+                    <text class="dg-lbl" x="614" y="115">Classification</text>
+                    <text class="dg-sub" x="614" y="129">Fault type &amp; severity</text>
+
+                    <!-- flow arrows -->
+                    <path class="dg-arrow" marker-end="url(#cpA2)" d="M164 54 H182"/>
+                    <path class="dg-arrow" marker-end="url(#cpA2)" d="M340 54 H358"/>
+                    <path class="dg-arrow" marker-end="url(#cpA2)" d="M516 54 H534"/>
+                  </svg>
+                </div>
+                <figcaption class="cp-figcap">Schematic &mdash; vibration-based bearing fault diagnosis chain</figcaption>
+              </figure>
+
+              <ul class="cp-tags">
+                <li>Vibration Analysis</li>
+                <li>Condition Monitoring</li>
+                <li>Fault Diagnosis</li>
+                <li>Data-Driven Models</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ==================== 03 · Walmart ==================== -->
+          <article class="cp-card ftco-animate">
+            <span class="cp-num">03</span>
+            <div class="cp-side">
+              <span class="cp-eyebrow">In collaboration with</span>
+              <span class="cp-partner">Walmart</span>
+              <span class="cp-host">IIT Madras</span>
+              <span class="cp-date">Aug 2024 &ndash; Aug 2025</span>
+            </div>
+            <div class="cp-body">
+              <h3 class="cp-title">RUL-Informed Backordering Strategy for Induction Motor Windings</h3>
+              <ul class="cp-points">
+                <li>Investigated the integration of <span class="cp-hl">Remaining Useful Life</span> information with maintenance and spare-parts decision-making.</li>
+                <li>Developed a data-driven framework connecting predictive maintenance with inventory decision support.</li>
+              </ul>
+
+              <figure class="cp-fig">
+                <div class="cp-fig__scroll">
+                  <svg viewBox="0 0 700 168" role="img" aria-label="Animated schematic linking a winding degradation curve and its predicted remaining useful life to the spare-part order trigger, supplier lead time and part availability before failure">
+                    <defs>
+                      <marker id="cpA3" markerWidth="7" markerHeight="7" refX="6.2" refY="3.5" orient="auto">
+                        <path d="M0 0 L7 3.5 L0 7 Z" fill="rgba(249,109,0,.85)"/>
+                      </marker>
+                      <marker id="cpT3" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                        <path d="M7 0 L0 3.5 L7 7 Z" fill="rgba(255,255,255,.45)"/>
+                      </marker>
+                    </defs>
+
+                    <!-- ===== left: degradation & RUL ===== -->
+                    <rect class="dg-box" x="10" y="14" width="360" height="112" rx="10"/>
+                    <path class="dg-dim" d="M44 104 V30 M44 104 H346"/>
+                    <text class="dg-sub" x="30" y="66" transform="rotate(-90 30 66)">Degradation</text>
+
+                    <path class="dg-dim" d="M44 42 H346" stroke-dasharray="4 4" opacity=".75"/>
+                    <text class="dg-tag" x="250" y="38" fill="rgba(255,255,255,.5)">failure threshold</text>
+
+                    <!-- measured history (draws itself) -->
+                    <path class="dg-hist dg-ico" stroke-width="2" d="M44 100 C 90 96, 130 88, 168 76"/>
+                    <circle class="dg-obs dg-fill" cx="60" cy="99" r="2.6"/>
+                    <circle class="dg-obs dg-fill" cx="96" cy="94" r="2.6" style="animation-delay:.45s"/>
+                    <circle class="dg-obs dg-fill" cx="132" cy="87" r="2.6" style="animation-delay:.9s"/>
+                    <circle class="dg-obs dg-fill" cx="168" cy="76" r="3.6" style="animation-delay:1.35s"/>
+
+                    <!-- prediction band + trajectory -->
+                    <path class="dg-band" fill="rgba(249,109,0,.14)" stroke="none"
+                          d="M168 76 C 208 66, 246 54, 286 34 L286 52 C 246 68, 208 76, 168 82 Z"/>
+                    <path class="dg-pred dg-ico" fill="none" d="M168 76 C 208 66, 244 54, 284 43"/>
+
+                    <!-- now -->
+                    <path class="dg-dim dg-pulse" d="M168 104 V70"/>
+                    <text class="dg-lbl" x="168" y="118" font-size="9">NOW</text>
+
+                    <!-- predicted failure -->
+                    <g class="dg-rul">
+                      <path class="dg-dim" d="M286 104 V42" stroke="rgba(249,109,0,.65)"/>
+                      <circle class="dg-fill" cx="286" cy="42" r="3.6"/>
+                      <text class="dg-lbl" x="294" y="118" font-size="9" fill="rgba(255,255,255,.5)">PREDICTED</text>
+                      <path class="dg-dim" marker-start="url(#cpT3)" marker-end="url(#cpA3)" d="M170 62 H284" stroke="rgba(249,109,0,.7)"/>
+                      <text class="dg-tag" x="212" y="57">RUL</text>
+                    </g>
+
+                    <text class="dg-lbl" x="190" y="140">Prognostics</text>
+                    <text class="dg-sub" x="190" y="154">Winding degradation &amp; RUL estimate</text>
+
+                    <!-- ===== right: spare-part decision ===== -->
+                    <rect class="dg-box" x="398" y="14" width="292" height="112" rx="10"/>
+                    <path class="dg-dim" d="M424 88 H666"/>
+
+                    <!-- order trigger -->
+                    <path class="dg-dim" d="M436 88 V64" stroke="rgba(249,109,0,.7)"/>
+                    <rect class="dg-fill" x="430" y="52" width="13" height="11" rx="2"/>
+                    <text class="dg-sub" x="437" y="106">order</text>
+                    <text class="dg-sub" x="437" y="117">trigger</text>
+
+                    <!-- lead time -->
+                    <path class="dg-dim" marker-start="url(#cpT3)" marker-end="url(#cpA3)" d="M440 76 H568"/>
+                    <text class="dg-tag" x="472" y="71">supplier lead time</text>
+
+                    <!-- travelling part -->
+                    <g class="dg-travel">
+                      <rect x="432" y="82" width="12" height="10" rx="2" fill="#ffbd39"/>
+                      <path d="M432 86 H444" stroke="rgba(6,6,9,.6)" stroke-width="1.2"/>
+                    </g>
+
+                    <!-- part on shelf -->
+                    <g class="dg-arrive">
+                      <path class="dg-dim" d="M572 88 V60"/>
+                      <rect class="dg-ico" x="563" y="45" width="18" height="14" rx="2"/>
+                      <path class="dg-ico" d="M563 50 H581"/>
+                    </g>
+                    <text class="dg-sub" x="572" y="106">part on</text>
+                    <text class="dg-sub" x="572" y="117">shelf</text>
+
+                    <!-- failure avoided -->
+                    <path class="dg-dim" d="M640 88 V58" stroke="rgba(249,109,0,.7)"/>
+                    <path class="dg-ico dg-pulse" d="M640 44 l7 12 h-14 Z" stroke-width="1.6"/>
+                    <circle class="dg-fill" cx="640" cy="53" r="1.6"/>
+                    <text class="dg-sub" x="640" y="106">failure</text>
+                    <text class="dg-sub" x="640" y="117">avoided</text>
+
+                    <text class="dg-lbl" x="544" y="140">Spare-Parts Decision</text>
+                    <text class="dg-sub" x="544" y="154">Backorder placed before the part is needed</text>
+
+                    <!-- link between panels -->
+                    <path class="dg-arrow" marker-end="url(#cpA3)" d="M372 70 H394"/>
+                  </svg>
+                </div>
+                <figcaption class="cp-figcap">Schematic &mdash; RUL estimate driving the spare-part order trigger</figcaption>
+              </figure>
+
+              <ul class="cp-tags">
+                <li>RUL Estimation</li>
+                <li>Spare-Parts Strategy</li>
+                <li>Inventory Decision Support</li>
+                <li>Predictive Maintenance</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+	  
 	  <section class="ftco-section" id="philanthropy-section">
   <div class="container">
 
