@@ -11,7 +11,7 @@
     <link rel="icon" href="images/about-me.png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Dr Suvendu Mohanty — Predictive Maintenance & Industrial AI">
-    <meta property="og: description" content=" PhD Mechanical Engineer | Prognostics & Health Management, condition monitoring, RUL estimation, wear-debris analysis.">
+        <meta property="og:description" content="PhD Mechanical Engineer | Prognostics &amp; Health Management, condition monitoring,  Predictive Maintenance, Reliability, AI/ML, Wear-debris analysis.">
     <meta property="og:url" content="https://suv89.github.io/drsuvendumohanty/">
     <meta property="og:image" content="https://suv89.github.io/drsuvendumohanty/images/about-me.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -439,7 +439,104 @@ section[id] { scroll-margin-top: 80px; }
   transition: transform .3s ease;
 }
 #contact-section .contact-card:hover .contact-card__cta .arw { transform: translateX(5px); }
-</style>	  
+</style>
+	  <style>
+/*======================================
+//--//-->   TIMELINE (EXPERIENCE + EDUCATION)
+======================================*/
+#resume-section .tl { position: relative; padding-top: 8px; }
+#resume-section .tl::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 0; bottom: 34px;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(249,109,0,0) 0%, #F96D00 10%, #ffbd39 50%, #F96D00 90%, rgba(249,109,0,0) 100%);
+}
+#resume-section .tl-item { position: relative; width: 50%; padding: 0 48px 38px 0; }
+#resume-section .tl-item:nth-child(even) { margin-left: 50%; padding: 0 0 38px 48px; }
+#resume-section .tl-dot {
+  position: absolute; top: 30px; right: -11px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: linear-gradient(135deg, #F96D00, #ffbd39);
+  box-shadow: 0 0 0 5px rgba(249,109,0,.13), 0 0 20px rgba(249,109,0,.55);
+  z-index: 2;
+}
+#resume-section .tl-item:nth-child(even) .tl-dot { left: -11px; right: auto; }
+#resume-section .tl-dot::after {
+  content: ""; position: absolute; left: -6px; top: -6px; right: -6px; bottom: -6px;
+  border-radius: 50%; border: 1px solid rgba(249,109,0,.55);
+  animation: tl-pulse 2.6s ease-out infinite;
+}
+@keyframes tl-pulse {
+  0%   { transform: scale(.75); opacity: .9; }
+  100% { transform: scale(2);   opacity: 0;  }
+}
+#resume-section .tl-card {
+  position: relative; overflow: hidden;
+  padding: 26px 26px 24px;
+  background: linear-gradient(160deg, rgba(255,255,255,.055) 0%, rgba(255,255,255,.018) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
+}
+#resume-section .tl-card::before {
+  content: ""; position: absolute; top: 0; left: 0; height: 3px; width: 100%;
+  background: linear-gradient(90deg, #F96D00, #ffbd39);
+  transform: scaleX(0); transform-origin: left; transition: transform .4s ease;
+}
+#resume-section .tl-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(249,109,0,.45);
+  box-shadow: 0 20px 46px rgba(0,0,0,.6);
+  background: linear-gradient(160deg, rgba(255,255,255,.08) 0%, rgba(249,109,0,.045) 100%);
+}
+#resume-section .tl-card:hover::before { transform: scaleX(1); }
+#resume-section .tl-top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 12px; }
+#resume-section .tl-date {
+  padding: 5px 12px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: #ffbd39; background: rgba(249,109,0,.14); border: 1px solid rgba(249,109,0,.32);
+}
+#resume-section .tl-now {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px; border-radius: 20px;
+  font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: #111; background: linear-gradient(135deg, #F96D00, #ffbd39);
+}
+#resume-section .tl-now i { width: 6px; height: 6px; border-radius: 50%; background: #111; animation: tl-blink 1.6s ease-in-out infinite; }
+@keyframes tl-blink { 50% { opacity: .25; } }
+#resume-section .tl-title { font-size: 18px; line-height: 1.4; font-weight: 600; color: #fff; margin: 0 0 8px; }
+#resume-section .tl-org {
+  display: block; margin-bottom: 16px;
+  font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+}
+#resume-section .tl-list { list-style: none; margin: 0; padding: 0; }
+#resume-section .tl-list li {
+  position: relative; padding-left: 20px; margin-bottom: 10px;
+  font-size: 13.5px; line-height: 1.65; color: rgba(255,255,255,.72);
+}
+#resume-section .tl-list li:last-child { margin-bottom: 0; }
+#resume-section .tl-list li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 7px; height: 7px; border-radius: 2px;
+  background: linear-gradient(135deg, #F96D00, #ffbd39);
+  transform: rotate(45deg);
+}
+#resume-section .tl-hl { color: #ffbd39; font-weight: 600; }
+#resume-section .tl-note { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,.72); margin: 0; }
+#resume-section .tl-note strong { display: block; color: rgba(255,255,255,.92); font-weight: 600; margin-bottom: 4px; }
+
+@media (max-width: 767px) {
+  #resume-section .tl::before { left: 11px; transform: none; }
+  #resume-section .tl-item,
+  #resume-section .tl-item:nth-child(even) { width: 100%; margin-left: 0; padding: 0 0 30px 40px; }
+  #resume-section .tl-dot,
+  #resume-section .tl-item:nth-child(even) .tl-dot { left: 0; right: auto; top: 26px; width: 18px; height: 18px; }
+  #resume-section .tl-card { padding: 22px 20px; }
+}
+</style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -557,7 +654,7 @@ section[id] { scroll-margin-top: 80px; }
 									<p class="title-s">Skills</p>
 									<span>Reliability & Maintenance</span> <span class="pull-right">95%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 92%;" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 									
 									<span>AI & Data Analytics</span> <span class="pull-right">85%</span>
@@ -580,7 +677,7 @@ section[id] { scroll-margin-top: 80px; }
 									
 									<span>Prognostics & Health Management (PHM)</span> <span class="pull-right">92%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+									    <div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0"
 											aria-valuemax="100"></div>
 									</div>
 								</div>
@@ -642,121 +739,144 @@ engine with 92% accuracy. Experienced in translating mechanical-system degradati
 frameworks, and maintenance decision-support solutions, achieving an 18% reduction in spare-parts costs for industrial equipment.</p>
           </div>
         </div>
-    			<div class="row">
+    					<div class="row">
 			<h1 class="big-4">Experience</h1>
 			<div class="underline"></div>
 		</div>
 		<br>
-
 		<div class="row">
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">Aug 2024 - Present</span>
-					<h2>Postdoctoral Researcher, Mechanical Engineering</h2>
-					<span class="position">IIT Madras, Chennai, India</span>
-					<div class="mt-4">
-						<ul>
-							<li>Collaborated with Hindustan Aeronautics Limited (HAL) on diagnostics and prognostics software for mechanical-system reliability; built a multi-sensor ANN fusion engine and a wear-debris classification framework.</li>
-							<li>Partnered with Walmart on an RUL-informed backordering strategy for induction-motor windings, cutting spare-parts cost by 18%.</li>
-							<!-- <li>Investigated vibration signals of rolling element bearings for fault diagnosis with Honeywell International.</li> -->
-							<li>Authored research proposals and operational frameworks for Integrated Vehicle Health Management (IVHM), and supervise a team of junior researchers.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+		  <div class="col-12">
+			<div class="tl">
 
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">May 2019 - Dec 2023</span>
-					<h2>Senior Research Fellow, Production Engineering</h2>
-					<span class="position">NIT Agartala, Tripura, India</span>
-					<div class="mt-4">
-						<ul>
-							<li>Led "Intelligent Prognostics of Alternative-Fuel Engines Using Computational Wear-Particle Analysis", achieving 92% RUL prediction accuracy.</li>
-							<li>Developed computational image-analysis methods for quantitative and qualitative characterization of wear particles.</li>
-							<li>Investigated multi-sensor data integration across wear, oil and vibration signals.</li>
-							<li>Built AI/ANN-based approaches for mechanical-system prognostics and Remaining Useful Life estimation.</li>
-						</ul>
-					</div>
+			  <div class="tl-item">
+				<span class="tl-dot"></span>
+				<div class="tl-card ftco-animate">
+				  <div class="tl-top">
+					<span class="tl-date">Aug 2024 &ndash; Present</span>
+					<span class="tl-now"><i></i> Current</span>
+				  </div>
+				  <h3 class="tl-title">Postdoctoral Researcher, Mechanical Engineering</h3>
+				  <span class="tl-org">IIT Madras &middot; Chennai, India</span>
+				  <ul class="tl-list">
+					<li>Collaborated with <span class="tl-hl">Hindustan Aeronautics Limited (HAL)</span> on diagnostics and prognostics software for mechanical-system reliability; built a multi-sensor ANN fusion engine and a wear-debris classification framework.</li>
+					<li>Partnered with <span class="tl-hl">Walmart</span> on an RUL-informed backordering strategy for induction-motor windings, cutting spare-parts cost by <span class="tl-hl">18%</span>.</li>
+					<li>Authored research proposals and operational frameworks for Integrated Vehicle Health Management (IVHM), and supervise a team of junior researchers.</li>
+				  </ul>
 				</div>
-			</div>
-		</div>
+			  </div>
 
-		<div class="row">
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">Jan 2017 - May 2019</span>
-					<h2>Junior Research Fellow, Production Engineering</h2>
-					<span class="position">NIT Agartala, Tripura, India</span>
-					<div class="mt-4">
-						<ul>
-							<li>Conducted systematic literature reviews to identify research gaps in engine wear, failure analysis and condition monitoring.</li>
-							<li>Formulated research problems and experimental methodologies for computational analysis of wear particles and engine degradation.</li>
-							<li>Supported experimental planning, data analysis and technical documentation.</li>
-						</ul>
-					</div>
+			  <div class="tl-item">
+				<span class="tl-dot"></span>
+				<div class="tl-card ftco-animate">
+				  <div class="tl-top"><span class="tl-date">May 2019 &ndash; Dec 2023</span></div>
+				  <h3 class="tl-title">Senior Research Fellow, Production Engineering</h3>
+				  <span class="tl-org">NIT Agartala &middot; Tripura, India</span>
+				  <ul class="tl-list">
+					<li>Led "Intelligent Prognostics of Alternative-Fuel Engines Using Computational Wear-Particle Analysis", achieving <span class="tl-hl">92% RUL prediction accuracy</span>.</li>
+					<li>Developed computational image-analysis methods for quantitative and qualitative characterization of wear particles.</li>
+					<li>Investigated multi-sensor data integration across wear, oil and vibration signals.</li>
+					<li>Built AI/ANN-based approaches for mechanical-system prognostics and Remaining Useful Life estimation.</li>
+				  </ul>
 				</div>
-			</div>
+			  </div>
 
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">May 2013 - Dec 2017</span>
-					<h2>Faculty, Mechanical Engineering</h2>
-					<span class="position">GIET Baniatangi &amp; HIT, Bhubaneswar, India</span>
-					<div class="mt-4">
-						<ul>
-							<li>Designed and delivered modules on mechanical engineering, thermodynamics, IC engines and tribology, plus laboratory sessions.</li>
-							<li>Integrated wear-failure and ANN-based fault-detection case studies into teaching.</li>
-							<li>Mentored undergraduate projects and coordinated industry workshops on reliability engineering.</li>
-						</ul>
-					</div>
+			  <div class="tl-item">
+				<span class="tl-dot"></span>
+				<div class="tl-card ftco-animate">
+				  <div class="tl-top"><span class="tl-date">Jan 2017 &ndash; May 2019</span></div>
+				  <h3 class="tl-title">Junior Research Fellow, Production Engineering</h3>
+				  <span class="tl-org">NIT Agartala &middot; Tripura, India</span>
+				  <ul class="tl-list">
+					<li>Conducted systematic literature reviews to identify research gaps in engine wear, failure analysis and condition monitoring.</li>
+					<li>Formulated research problems and experimental methodologies for computational analysis of wear particles and engine degradation.</li>
+					<li>Supported experimental planning, data analysis and technical documentation.</li>
+				  </ul>
 				</div>
+			  </div>
+
+			  <div class="tl-item">
+				<span class="tl-dot"></span>
+				<div class="tl-card ftco-animate">
+				  <div class="tl-top"><span class="tl-date">May 2013 &ndash; Dec 2017</span></div>
+				  <h3 class="tl-title">Faculty, Mechanical Engineering</h3>
+				  <span class="tl-org">GIET Baniatangi &amp; HIT &middot; Bhubaneswar, India</span>
+				  <ul class="tl-list">
+					<li>Designed and delivered modules on mechanical engineering, thermodynamics, IC engines and tribology, plus laboratory sessions.</li>
+					<li>Integrated wear-failure and ANN-based fault-detection case studies into teaching.</li>
+					<li>Mentored undergraduate projects and coordinated industry workshops on reliability engineering.</li>
+				  </ul>
+				</div>
+			  </div>
+
 			</div>
+		  </div>
 		</div>
 
 		<br>
-		<br>
-
 		<div class="row">
+					<div class="row">
 			<h1 class="big-4">Education</h1>
 			<div class="underline"></div>
 		</div>
 		<br>
-
 		<div class="row">
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">2017-2023</span>
-					<h2>PhD, Production Engineering</h2>
-					<span class="position">National Institute of Technology (NIT), Agartala</span>
-					<p class="mt-4">Thesis: Failure Prediction of Engine Driven by CNG Through Prognostic Approach.<br>Focus: Oil analysis, computational wear-particle image analysis, AI-based prognostics and RUL estimation.</p>
-				</div>
-			</div>
+		  <div class="col-12">
+			<div class="tl">
 
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">2011-2013</span>
-					<h2>M.Tech., Mechanical Engineering (Thermal)</h2>
-					<span class="position">NIT Patna | GATE Fellowship recipient</span>
-					<p class="mt-4">Thesis: Analysis of Exhaust Emission of Internal Combustion Engine Using Biodiesel Blend.<br>Focus: Experimental study of emission behaviour and comparative engine performance.</p>
+			  <div class="tl-item">
+				<span class="tl-dot"></span>
+				<div class="tl-card ftco-animate">
+				  <div class="tl-top">
+					<span class="tl-date">2017 &ndash; 2023</span>
+					<span class="tl-now"><i></i> Institute Fellow</span>
+				  </div>
+				  <h3 class="tl-title">PhD, Production Engineering</h3>
+				  <span class="tl-org">National Institute of Technology (NIT), Agartala</span>
+				  <p class="tl-note"><strong>Thesis</strong>Failure Prediction of Engine Driven by CNG Through Prognostic Approach.</p>
+				  <ul class="tl-list" style="margin-top:12px;">
+					<li>Oil analysis and computational wear-particle image analysis</li>
+					<li>AI-based prognostics and <span class="tl-hl">RUL estimation</span></li>
+				  </ul>
 				</div>
-			</div>
-		</div>
+			  </div>
 
-		<div class="row">
-			<div class="col-md-6">
-				<div class="resume-wrap ftco-animate">
-					<span class="date">2007-2011</span>
-					<h2>B.Tech., Mechanical Engineering</h2>
-					<span class="position">BPUT University, Odisha</span>
-					<p class="mt-4">Thesis: Theoretical Investigation of Turbulent Fluid Flow &amp; Heat Transfer in a Mixing Junction.<br>Focus: CFD analysis using Gambit and ANSYS Fluent.</p>
+			  <div class="tl-item">
+				<span class="tl-dot"></span>
+				<div class="tl-card ftco-animate">
+				  <div class="tl-top">
+					<span class="tl-date">2011 &ndash; 2013</span>
+					<span class="tl-now"><i></i> GATE Fellow</span>
+				  </div>
+				  <h3 class="tl-title">M.Tech., Mechanical Engineering (Thermal)</h3>
+				  <span class="tl-org">NIT Patna</span>
+				  <p class="tl-note"><strong>Thesis</strong>Analysis of Exhaust Emission of Internal Combustion Engine Using Biodiesel Blend.</p>
+				  <ul class="tl-list" style="margin-top:12px;">
+					<li>Experimental study of emission behaviour</li>
+					<li>Comparative engine performance analysis</li>
+				  </ul>
 				</div>
+			  </div>
+
+			  <div class="tl-item">
+				<span class="tl-dot"></span>
+				<div class="tl-card ftco-animate">
+				  <div class="tl-top"><span class="tl-date">2007 &ndash; 2011</span></div>
+				  <h3 class="tl-title">B.Tech., Mechanical Engineering</h3>
+				  <span class="tl-org">BPUT University, Odisha</span>
+				  <p class="tl-note"><strong>Thesis</strong>Theoretical Investigation of Turbulent Fluid Flow &amp; Heat Transfer in a Mixing Junction.</p>
+				  <ul class="tl-list" style="margin-top:12px;">
+					<li>CFD analysis using Gambit and ANSYS Fluent</li>
+				  </ul>
+				</div>
+			  </div>
+
 			</div>
+		  </div>
 		</div>
 
     		<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://drive.google.com/file/d/18W5LN5RhloHY-GxayBU00ZQZZCeaXLcw/view?usp=drive_link"class="btn btn-primary py-4 px-5">Download CV</a></p>
+    			<p><a href="https://drive.google.com/file/d/18W5LN5RhloHY-GxayBU00ZQZZCeaXLcw/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-primary py-4 px-5">Download CV</a></p>
     			</div>
     		</div>
     	</div>
