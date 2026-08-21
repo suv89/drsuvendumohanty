@@ -537,6 +537,227 @@ section[id] { scroll-margin-top: 80px; }
   #resume-section .tl-card { padding: 22px 20px; }
 }
 </style>
+<style>
+/*======================================
+//--//-->   PHILANTHROPIC EDUCATOR
+======================================*/
+#philanthropy-section { position: relative; overflow: hidden; }
+#philanthropy-section::after {
+  content: "";
+  position: absolute;
+  top: 12%; right: -12%;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249,109,0,.13) 0%, rgba(249,109,0,0) 70%);
+  pointer-events: none;
+}
+
+/* ---------- eyebrow badge ---------- */
+#philanthropy-section .phil-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 7px 16px; margin-bottom: 20px;
+  border-radius: 30px;
+  font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: #ffbd39;
+  background: rgba(249,109,0,.12);
+  border: 1px solid rgba(249,109,0,.32);
+}
+#philanthropy-section .phil-badge i {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: linear-gradient(135deg,#F96D00,#ffbd39);
+  box-shadow: 0 0 10px rgba(249,109,0,.9);
+  animation: phil-blink 1.8s ease-in-out infinite;
+}
+@keyframes phil-blink { 50% { opacity: .25; } }
+
+/* ---------- story column ---------- */
+#philanthropy-section .phil-story {
+  padding: 34px 32px 30px;
+  background: linear-gradient(160deg, rgba(255,255,255,.055) 0%, rgba(255,255,255,.018) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-left: 3px solid #F96D00;
+  border-radius: 14px;
+  height: 100%;
+}
+#philanthropy-section .phil-story p {
+  font-size: 14.5px; line-height: 1.85; color: rgba(255,255,255,.72); margin-bottom: 16px;
+}
+#philanthropy-section .phil-story p:last-of-type { margin-bottom: 0; }
+#philanthropy-section .phil-story strong { color: #ffbd39; font-weight: 600; }
+
+#philanthropy-section .phil-chips { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 9px; }
+#philanthropy-section .phil-chips li {
+  padding: 6px 13px; border-radius: 20px;
+  font-size: 11.5px; font-weight: 600; letter-spacing: .04em;
+  color: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.1);
+  transition: all .3s ease;
+}
+#philanthropy-section .phil-chips li:hover {
+  color: #ffbd39; border-color: rgba(249,109,0,.45); background: rgba(249,109,0,.1);
+}
+
+/* ---------- impact stats ---------- */
+#philanthropy-section .phil-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; height: 100%; }
+#philanthropy-section .phil-stat {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 26px 22px;
+  background: linear-gradient(160deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.015) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+#philanthropy-section .phil-stat::before {
+  content: ""; position: absolute; top: 0; left: 0; height: 3px; width: 100%;
+  background: linear-gradient(90deg,#F96D00,#ffbd39);
+  transform: scaleX(0); transform-origin: left; transition: transform .4s ease;
+}
+#philanthropy-section .phil-stat:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249,109,0,.45);
+  box-shadow: 0 18px 40px rgba(0,0,0,.55);
+}
+#philanthropy-section .phil-stat:hover::before { transform: scaleX(1); }
+#philanthropy-section .phil-stat__num {
+  font-size: 40px; font-weight: 700; line-height: 1;
+  background: linear-gradient(135deg,#F96D00,#ffbd39);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#philanthropy-section .phil-stat__num small { font-size: 24px; font-weight: 700; }
+#philanthropy-section .phil-stat__label {
+  margin-top: 10px;
+  font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase;
+  color: rgba(255,255,255,.55); line-height: 1.6;
+}
+
+/* ---------- gallery ---------- */
+#philanthropy-section .phil-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 178px;
+  gap: 16px;
+  margin-top: 56px;
+}
+#philanthropy-section .phil-shot {
+  position: relative; display: block; overflow: hidden;
+  border-radius: 12px; cursor: pointer;
+  border: 1px solid rgba(255,255,255,.09);
+  background: #111;
+  transition: border-color .35s ease, box-shadow .35s ease, transform .35s ease;
+}
+#philanthropy-section .phil-shot img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(28%) brightness(.86);
+  transition: transform .6s cubic-bezier(.2,.7,.3,1), filter .45s ease;
+}
+#philanthropy-section .phil-shot::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,0) 75%);
+  opacity: .75; transition: opacity .35s ease;
+}
+#philanthropy-section .phil-shot:hover { transform: translateY(-5px); border-color: rgba(249,109,0,.55); box-shadow: 0 20px 44px rgba(0,0,0,.6); }
+#philanthropy-section .phil-shot:hover img { transform: scale(1.09); filter: grayscale(0%) brightness(1); }
+#philanthropy-section .phil-shot:hover::after { opacity: .95; }
+
+#philanthropy-section .phil-cap {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  padding: 16px 18px;
+  transform: translateY(8px); opacity: .92;
+  transition: transform .35s ease, opacity .35s ease;
+}
+#philanthropy-section .phil-shot:hover .phil-cap { transform: translateY(0); opacity: 1; }
+#philanthropy-section .phil-cap h4 { font-size: 14px; font-weight: 600; color: #fff; margin: 0 0 3px; line-height: 1.35; }
+#philanthropy-section .phil-cap span { font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #ffbd39; }
+
+/* featured tiles */
+#philanthropy-section .phil-shot--wide { grid-column: span 2; grid-row: span 2; }
+#philanthropy-section .phil-shot--tall { grid-row: span 2; }
+
+/* ---------- quote strip ---------- */
+#philanthropy-section .phil-quote {
+  position: relative;
+  margin-top: 56px; padding: 40px 44px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(249,109,0,.09) 0%, rgba(255,255,255,.02) 100%);
+  border: 1px solid rgba(249,109,0,.22);
+  border-radius: 16px;
+}
+#philanthropy-section .phil-quote::before {
+  content: "\201C";
+  position: absolute; top: -12px; left: 30px;
+  font-size: 90px; line-height: 1; font-family: Georgia, serif;
+  color: rgba(249,109,0,.22);
+}
+#philanthropy-section .phil-quote p {
+  position: relative;
+  font-size: 19px; line-height: 1.65; font-weight: 500; font-style: italic;
+  color: rgba(255,255,255,.9); margin: 0 0 14px;
+}
+#philanthropy-section .phil-quote span {
+  font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: #F96D00;
+}
+
+/* ---------- lightbox ---------- */
+#phil-lightbox {
+  position: fixed; inset: 0; z-index: 9999;
+  display: none; align-items: center; justify-content: center;
+  padding: 40px 60px;
+  background: rgba(8,8,10,.95);
+  backdrop-filter: blur(6px);
+}
+#phil-lightbox.is-open { display: flex; animation: phil-fade .25s ease; }
+@keyframes phil-fade { from { opacity: 0; } to { opacity: 1; } }
+#phil-lightbox figure { margin: 0; max-width: 100%; max-height: 100%; text-align: center; }
+#phil-lightbox img {
+  max-width: 100%; max-height: 76vh;
+  border-radius: 10px; border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 30px 80px rgba(0,0,0,.8);
+}
+#phil-lightbox figcaption { margin-top: 18px; }
+#phil-lightbox figcaption h4 { font-size: 16px; font-weight: 600; color: #fff; margin: 0 0 5px; }
+#phil-lightbox figcaption span { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #ffbd39; }
+#phil-lightbox .phil-lb-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%;
+  background: rgba(255,255,255,.06); color: #fff;
+  font-size: 22px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .25s ease;
+}
+#phil-lightbox .phil-lb-btn:hover { background: linear-gradient(135deg,#F96D00,#ffbd39); color: #111; border-color: transparent; }
+#phil-lightbox .phil-lb-prev { left: 18px; }
+#phil-lightbox .phil-lb-next { right: 18px; }
+#phil-lightbox .phil-lb-close {
+  position: absolute; top: 22px; right: 22px;
+  width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%;
+  background: rgba(255,255,255,.06); color: #fff; font-size: 20px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: all .25s ease;
+}
+#phil-lightbox .phil-lb-close:hover { background: linear-gradient(135deg,#F96D00,#ffbd39); color: #111; border-color: transparent; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 991px) {
+  #philanthropy-section .phil-stats { margin-top: 30px; }
+  #philanthropy-section .phil-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 165px; }
+  #philanthropy-section .phil-shot--wide { grid-column: span 2; grid-row: span 2; }
+}
+@media (max-width: 575px) {
+  #philanthropy-section .phil-story { padding: 26px 22px; }
+  #philanthropy-section .phil-stats { grid-template-columns: 1fr 1fr; gap: 14px; }
+  #philanthropy-section .phil-stat { padding: 20px 16px; }
+  #philanthropy-section .phil-stat__num { font-size: 32px; }
+  #philanthropy-section .phil-gallery { grid-auto-rows: 140px; gap: 12px; }
+  #philanthropy-section .phil-quote { padding: 30px 22px; }
+  #philanthropy-section .phil-quote p { font-size: 16px; }
+  #phil-lightbox { padding: 24px 14px; }
+  #phil-lightbox .phil-lb-btn { width: 40px; height: 40px; }
+}
+</style>
+	  
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -550,12 +771,13 @@ section[id] { scroll-margin-top: 80px; }
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#Publications-section" class="nav-link"><span>Publications</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
+  <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+  <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+  <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+  <li class="nav-item"><a href="#philanthropy-section" class="nav-link"><span>Philanthropy</span></a></li>
+  <li class="nav-item"><a href="#Publications-section" class="nav-link"><span>Publications</span></a></li>
+  <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+</ul>
 	      </div>
 	    </div>
 	  </nav>
@@ -975,6 +1197,224 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
       </div>
     </section>
 
+	  <section class="ftco-section" id="philanthropy-section">
+  <div class="container">
+
+    <!-- ---------- heading ---------- -->
+    <div class="row justify-content-center mb-5 pb-2">
+      <div class="col-md-9 heading-section text-center ftco-animate">
+        <h1 class="big big-2">Outreach</h1>
+        <h2 class="mb-4">Philanthropic Educator</h2>
+        <span class="phil-badge"><i></i> Free &amp; Subsidised STEM Education</span>
+        <p>Beyond the laboratory &mdash; a decade of teaching physics, chemistry and mathematics free of cost to tribal and rural students in Tripura and Odisha, so that a postcode never decides who gets to become an engineer.</p>
+      </div>
+    </div>
+
+    <!-- ---------- story + stats ---------- -->
+    <div class="row align-items-stretch">
+      <div class="col-lg-7 d-flex ftco-animate">
+        <div class="phil-story">
+          <p>What began as evening tuition for a handful of neighbourhood children grew into <strong>SM Classes</strong> and later <strong>SUVTEC Science Academy</strong> &mdash; classrooms in Agartala and in remote hill villages where students from the Debbarma, Reang and Rava communities prepare for CBSE boards, JEE, NEET and beyond, <strong>without paying a rupee in fees</strong>.</p>
+          <p>Alongside teaching, I run book, stationery and study-material drives with the <strong>Anex Charitable Trust</strong>, reaching residential hostels such as Maa Dhanswari B/G Hostel at Chanmari Khumulwng. Every batch is mentored personally &mdash; from the first algebra class to the college admission letter.</p>
+          <p>The payment arrives differently: a hand-drawn whiteboard on Teachers&rsquo; Day, a hand-woven <em>risa</em>, and a first-generation graduate walking into an engineering college.</p>
+
+          <ul class="phil-chips">
+            <li>SM Classes</li>
+            <li>SUVTEC Science Academy</li>
+            <li>Anex Charitable Trust</li>
+            <li>CBSE / JEE / NEET Coaching</li>
+            <li>Tribal &amp; Rural Outreach</li>
+            <li>Book &amp; Stationery Drives</li>
+            <li>First-Generation Learners</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-5 d-flex ftco-animate">
+        <div class="phil-stats">
+          <!-- EDIT the data-count values and labels to match your real figures -->
+          <div class="phil-stat">
+            <div class="phil-stat__num" data-count="200"><small>+</small></div>
+            <div class="phil-stat__label">Students Taught<br>Free of Cost</div>
+          </div>
+          <div class="phil-stat">
+            <div class="phil-stat__num" data-count="10"><small>+</small></div>
+            <div class="phil-stat__label">Years of<br>Volunteer Teaching</div>
+          </div>
+          <div class="phil-stat">
+            <div class="phil-stat__num" data-count="100"><small>%</small></div>
+            <div class="phil-stat__label">Board Pass Rate<br>Across Batches</div>
+          </div>
+          <div class="phil-stat">
+            <div class="phil-stat__num" data-count="3"><small>+</small></div>
+            <div class="phil-stat__label">Villages &amp; Hostels<br>Reached</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- gallery ---------- -->
+    <div class="row">
+      <div class="col-12 ftco-animate">
+        <div class="phil-gallery">
+
+          <a class="phil-shot phil-shot--wide" data-src="images/IMG_1201.png"
+             data-title="Village classroom, Tripura" data-sub="Weekend trigonometry class">
+            <img loading="lazy" decoding="async" src="images/IMG_1201.png" alt="Dr Suvendu Mohanty teaching mathematics to tribal students in a village classroom in Tripura">
+            <div class="phil-cap"><h4>Village classroom, Tripura</h4><span>Weekend trigonometry class</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/IMG_E1890.png"
+             data-title="SUVTEC Science Classes" data-sub="Evening batch, Agartala">
+            <img loading="lazy" decoding="async" src="images/IMG_E1890.png" alt="Evening batch of students at SUVTEC Science Classes, Agartala">
+            <div class="phil-cap"><h4>SUVTEC Science Classes</h4><span>Evening batch, Agartala</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/EJTT2855.png"
+             data-title="Maa Dhanswari Hostel drive" data-sub="Anex Charitable Trust &middot; 2023">
+            <img loading="lazy" decoding="async" src="images/EJTT2855.png" alt="Study-material distribution drive at Maa Dhanswari Hostel with Anex Charitable Trust">
+            <div class="phil-cap"><h4>Maa Dhanswari Hostel drive</h4><span>Anex Charitable Trust &middot; 2023</span></div>
+          </a>
+
+          <a class="phil-shot phil-shot--tall" data-src="images/PBHJE5597.png"
+             data-title="Open to every student" data-sub="Classes VII&ndash;XII, Science">
+            <img loading="lazy" decoding="async" src="images/PBHJE5597.png" alt="SUVTEC Science Classes roadside banner offering tuition for classes VII to XII">
+            <div class="phil-cap"><h4>Open to every student</h4><span>Classes VII&ndash;XII, Science</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/MPTI2005.png"
+             data-title="CBSE Class X results" data-sub="Batch of 2020&ndash;21">
+            <img loading="lazy" decoding="async" src="images/MPTI2005.png" alt="CBSE Class 10 results board for students mentored at SM Classes, 2020-21">
+            <div class="phil-cap"><h4>CBSE Class X results</h4><span>Batch of 2020&ndash;21</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/DSC_0141.png"
+             data-title="One of the early batches" data-sub="SM Classes, Agartala">
+            <img loading="lazy" decoding="async" src="images/DSC_0141.png" alt="Dr Suvendu Mohanty with one of the early SM Classes student batches">
+            <div class="phil-cap"><h4>One of the early batches</h4><span>SM Classes, Agartala</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/DSC_0146.png"
+             data-title="Teachers&rsquo; Day" data-sub="Surprise from the students">
+            <img loading="lazy" decoding="async" src="images/DSC_0146.png" alt="Teachers Day cake prepared by students for Suvendu Sir">
+            <div class="phil-cap"><h4>Teachers&rsquo; Day</h4><span>Surprise from the students</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/IMG_1208.png"
+             data-title="Payment in gratitude" data-sub="Hand-drawn by the class">
+            <img loading="lazy" decoding="async" src="images/IMG_1208.png" alt="Hand-drawn Happy Teachers Day message on the classroom whiteboard">
+            <div class="phil-cap"><h4>Payment in gratitude</h4><span>Hand-drawn by the class</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/USKE4885.png"
+             data-title="More than a classroom" data-sub="Celebrating together">
+            <img loading="lazy" decoding="async" src="images/USKE4885.png" alt="Students celebrating a birthday with their teacher at the academy">
+            <div class="phil-cap"><h4>More than a classroom</h4><span>Celebrating together</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/IMG_1211.png"
+             data-title="A hand-woven risa" data-sub="Traditional Tripuri honour">
+            <img loading="lazy" decoding="async" src="images/IMG_1211.png" alt="Traditional hand-woven Tripuri risa presented as a gift by students">
+            <div class="phil-cap"><h4>A hand-woven <em>risa</em></h4><span>Traditional Tripuri honour</span></div>
+          </a>
+
+          <a class="phil-shot" data-src="images/DSC8642.png"
+             data-title="Felicitated for teaching" data-sub="GIET, Bhubaneswar">
+            <img loading="lazy" decoding="async" src="images/DSC8642.png" alt="Dr Suvendu Mohanty being felicitated on stage at Gandhi Institute for Education and Technology">
+            <div class="phil-cap"><h4>Felicitated for teaching</h4><span>GIET, Bhubaneswar</span></div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- quote ---------- -->
+    <div class="row">
+      <div class="col-12 ftco-animate">
+        <div class="phil-quote">
+          <p>I build models that predict when machines will fail.<br>These classrooms make sure no student does.</p>
+          <span>&mdash; Dr Suvendu Mohanty</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- lightbox shell -->
+<div id="phil-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="phil-lb-close" type="button" aria-label="Close">&#10005;</button>
+  <button class="phil-lb-btn phil-lb-prev" type="button" aria-label="Previous">&#8249;</button>
+  <button class="phil-lb-btn phil-lb-next" type="button" aria-label="Next">&#8250;</button>
+  <figure>
+    <img src="" alt="">
+    <figcaption><h4></h4><span></span></figcaption>
+  </figure>
+</div>
+
+<script>
+/* Philanthropic Educator — counters + lightbox */
+(function () {
+  var nums = document.querySelectorAll('#philanthropy-section .phil-stat__num');
+  function runCount(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var suffix = el.querySelector('small');
+    var sfx = suffix ? suffix.outerHTML : '';
+    var start = null, dur = 1600;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.innerHTML = Math.round(target * eased) + sfx;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { runCount(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    nums.forEach(function (n) { io.observe(n); });
+  } else {
+    nums.forEach(runCount);
+  }
+
+  var shots = Array.prototype.slice.call(document.querySelectorAll('#philanthropy-section .phil-shot'));
+  var lb = document.getElementById('phil-lightbox');
+  if (!lb || !shots.length) return;
+  var lbImg = lb.querySelector('img'),
+      lbTitle = lb.querySelector('figcaption h4'),
+      lbSub = lb.querySelector('figcaption span'),
+      idx = 0;
+
+  function show(i) {
+    idx = (i + shots.length) % shots.length;
+    var s = shots[idx];
+    lbImg.src = s.getAttribute('data-src');
+    lbImg.alt = s.querySelector('img').alt;
+    lbTitle.innerHTML = s.getAttribute('data-title');
+    lbSub.innerHTML = s.getAttribute('data-sub');
+  }
+  function open(i) { show(i); lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+
+  shots.forEach(function (s, i) {
+    s.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+  });
+  lb.querySelector('.phil-lb-close').addEventListener('click', close);
+  lb.querySelector('.phil-lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+  lb.querySelector('.phil-lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+</script>
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
       <div class="container">
 		<div class="row d-md-flex align-items-center">
