@@ -1313,6 +1313,108 @@ img, svg, table { max-width: 100%; }
   #philanthropy-section .phil-cap h4      { text-shadow: 0 1px 6px rgba(0,0,0,.9); }
 }
 </style>
+	  <!-- ==========================================================
+     AWARDS & CERTIFICATIONS
+========================================================== -->
+<style>
+#credentials-section { position: relative; overflow: hidden; }
+#credentials-section::before {
+  content: "";
+  position: absolute;
+  top: 20%; right: -12%;
+  width: 440px; height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249,109,0,.10) 0%, rgba(249,109,0,0) 70%);
+  pointer-events: none;
+}
+#credentials-section .cred-group {
+  position: relative;
+  margin: 0 0 22px;
+  padding-bottom: 11px;
+  font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: #fff;
+}
+#credentials-section .cred-group::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 46px; height: 2px;
+  background: linear-gradient(90deg, #F96D00, #ffbd39);
+}
+#credentials-section .cred-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+#credentials-section .cred-card {
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 20px 22px;
+  background: linear-gradient(160deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.015) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
+}
+#credentials-section .cred-card::before {
+  content: ""; position: absolute; top: 0; left: 0; height: 3px; width: 100%;
+  background: linear-gradient(90deg, #F96D00, #ffbd39);
+  transform: scaleX(0); transform-origin: left; transition: transform .4s ease;
+}
+#credentials-section .cred-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(249,109,0,.45);
+  box-shadow: 0 18px 40px rgba(0,0,0,.55);
+  background: linear-gradient(160deg, rgba(255,255,255,.075) 0%, rgba(249,109,0,.045) 100%);
+}
+#credentials-section .cred-card:hover::before { transform: scaleX(1); }
+#credentials-section .cred-ico {
+  flex: none;
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  color: #ffbd39;
+  background: rgba(249,109,0,.12);
+  border: 1px solid rgba(249,109,0,.3);
+  transition: all .3s ease;
+}
+#credentials-section .cred-card:hover .cred-ico {
+  background: linear-gradient(135deg, #F96D00, #ffbd39);
+  border-color: transparent;
+  color: #111;
+  box-shadow: 0 8px 20px rgba(249,109,0,.35);
+}
+#credentials-section .cred-txt { min-width: 0; }
+#credentials-section .cred-title {
+  margin: 0 0 5px;
+  font-size: 15.5px; font-weight: 600; line-height: 1.4;
+  color: #fff;
+  transition: color .3s ease;
+}
+#credentials-section .cred-card:hover .cred-title { color: #ffbd39; }
+#credentials-section .cred-org {
+  display: block; margin-bottom: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.62);
+}
+#credentials-section .cred-note {
+  margin: 0;
+  font-size: 13px; line-height: 1.6;
+  color: rgba(255,255,255,.84);
+}
+#credentials-section .cred-id {
+  display: inline-block; margin-top: 9px;
+  padding: 4px 11px; border-radius: 20px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: .07em;
+  color: #ffbd39;
+  background: rgba(249,109,0,.12);
+  border: 1px solid rgba(249,109,0,.28);
+}
+@media (max-width: 991px) {
+  #credentials-section .cred-note { color: rgba(255,255,255,.92); }
+  #credentials-section .cred-org  { color: rgba(255,255,255,.72); }
+  #credentials-section .cred-list { margin-bottom: 30px; }
+}
+@media (max-width: 575px) {
+  #credentials-section .cred-card  { padding: 18px 16px; gap: 13px; }
+  #credentials-section .cred-ico   { width: 38px; height: 38px; }
+  #credentials-section .cred-title { font-size: 14.5px; }
+}
+</style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -1331,6 +1433,7 @@ img, svg, table { max-width: 100%; }
   <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
   <li class="nav-item"><a href="#Publications-section" class="nav-link"><span>Publications</span></a></li>
   <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+  <li class="nav-item"><a href="#credentials-section" class="nav-link"><span>Credentials</span></a></li>
   <li class="nav-item"><a href="#philanthropy-section" class="nav-link"><span>Philanthropy</span></a></li>
   <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 </ul>
@@ -1656,7 +1759,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 
 			<div class="row justify-content-center mt-4 pb-5">
 				<div class="col-md-6 text-center ftco-animate">
-					<p class="mb-2"><a href="https://drive.google.com/file/d/18W5LN5RhloHY-GxayBU00ZQZZCeaXLcw/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-primary py-4 px-5">Download CV</a></p>
+					<p class="mb-2"><a href="https://drive.google.com/file/d/18W5LN5RhloHY-GxayBU00ZQZZCeaXLcw/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary py-4 px-5">Download CV</a></p>
 					<span class="tl-org" style="letter-spacing:.1em;">Full academic CV &middot; PDF</span>
 				</div>
 			</div>
@@ -1777,7 +1880,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
               <span class="cp-host">IIT Madras</span>
               <span class="cp-date">Aug 2025 &ndash; Aug 2026</span>
               <!-- delete the next line once the project is complete -->
-              <span class="cp-live"><i></i> Ongoing</span>
+              <!-- <span class="cp-live"><i></i> Ongoing</span> -->
             </div>
             <div class="cp-body">
               <h3 class="cp-title">Diagnostics and Prognostics Software Development</h3>
@@ -2121,7 +2224,123 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 
   </div>
 </section>
-	  
+	<section class="ftco-section" id="credentials-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-8 heading-section text-center ftco-animate">
+        <h1 class="big big-2">Credentials</h1>
+        <h2 class="mb-4">Awards &amp; Certifications</h2>
+        <p>Fellowships, professional memberships and specialist training in tribology, industrial AI and engine diagnostics.</p>
+      </div>
+    </div>
+    <div class="row">
+      <!-- ============ Awards & Memberships ============ -->
+      <div class="col-lg-6 ftco-animate">
+        <h3 class="cred-group">Awards &amp; Memberships</h3>
+        <div class="cred-list">
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">Doctoral Fellowship</h4>
+              <span class="cred-org">NIT Agartala</span>
+              <p class="cred-note">Awarded for academic excellence and research contributions.</p>
+            </div>
+          </article>
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.4L17 21l-1.5-7.5"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">GATE Fellowship</h4>
+              <span class="cred-org">NIT Patna</span>
+              <p class="cred-note">Recognised for outstanding academic performance.</p>
+            </div>
+          </article>
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="3.2"/><path d="M17.5 11.5 19 13l3-3.5"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">Life Member</h4>
+              <span class="cred-org">Tribology Society of India</span>
+              <p class="cred-note">Professional membership in the national tribology body.</p>
+              <span class="cred-id">TSI &middot; LM6009</span>
+            </div>
+          </article>
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="3.2"/><path d="M17.5 11.5 19 13l3-3.5"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">Life Member</h4>
+              <span class="cred-org">The Institution of Engineers (India)</span>
+              <p class="cred-note">Chartered professional engineering membership.</p>
+              <span class="cred-id">IEI &middot; M-1746671</span>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- ============ Certifications ============ -->
+      <div class="col-lg-6 ftco-animate">
+        <h3 class="cred-group">Certifications &amp; Professional Development</h3>
+        <div class="cred-list">
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 20h10M12 17v3"/><path d="M8 9h8M8 12.5h5"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">Industrial Product Design with AI Tools</h4>
+              <span class="cred-org">IIT Madras &middot; Outreach &amp; Digital Education</span>
+              <p class="cred-note">Applying AI-assisted methods to industrial product design workflows.</p>
+            </div>
+          </article>
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 20h10M12 17v3"/><path d="M8 9h8M8 12.5h5"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">Responsible AI for Social Empowerment (RAISE 2020)</h4>
+              <span class="cred-org">MeitY &amp; NITI Aayog, Government of India</span>
+              <p class="cred-note">National summit on the responsible deployment of AI.</p>
+            </div>
+          </article>
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3M6 6l2.1 2.1M15.9 15.9 18 18M18 6l-2.1 2.1M8.1 15.9 6 18"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">18<sup>th</sup> Summer School in Tribology</h4>
+              <span class="cred-org">Tribology Society of India</span>
+              <p class="cred-note">Advanced training in friction, wear and lubrication.</p>
+            </div>
+          </article>
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="7" r="2.2"/><circle cx="5.5" cy="17" r="2.2"/><circle cx="18.5" cy="12" r="2.2"/><path d="M7.6 8.2 16.5 11M7.6 15.8 16.5 13"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">Fuzzy Logic &amp; Neural Network Approaches for Engineering Solutions</h4>
+              <span class="cred-org">Journal of Advanced Engineering Research</span>
+              <p class="cred-note">Applied soft-computing methods for engineering problems.</p>
+            </div>
+          </article>
+          <article class="cred-card">
+            <span class="cred-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V10a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v10"/><path d="M4 20h16M9 7V5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5v2"/><path d="M10 12h4"/></svg>
+            </span>
+            <div class="cred-txt">
+              <h4 class="cred-title">Engine Combustion &amp; Emission Diagnostics</h4>
+              <span class="cred-org">Workshop &middot; NIT Agartala</span>
+              <p class="cred-note">Experimental diagnostics of combustion and exhaust emissions.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
 	  <section class="ftco-section" id="philanthropy-section">
   <div class="container">
 
@@ -2346,8 +2565,16 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18">
               <div class="text">
-                <strong class="number" data-number="10">0</strong>
-                <span>Achievements</span>
+                <strong class="number" data-number="9">0</strong>
+<span>Awards &amp; Certifications</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="3">0</strong>
+                <span>Collaborative Projects</span>
               </div>
             </div>
           </div>
@@ -2355,15 +2582,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
             <div class="block-18">
               <div class="text">
                 <strong class="number" data-number="5">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1000">0</strong>
-                <span>Mentored Students</span>
+                <span>Journal Publications</span>
               </div>
             </div>
           </div>
@@ -2371,7 +2590,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
             <div class="block-18">
               <div class="text">
                 <strong class="number" data-number="200">0</strong>
-                <span> Philanthropic Educator</span>
+                <span>Students Taught Free</span>
               </div>
             </div>
           </div>
@@ -2408,7 +2627,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 
         <div class="row d-flex contact-info mb-5">
                     <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <a class="contact-card" href="https://www.google.com/maps/search/?api=1&amp;query=Silicon+Oasis+Dubai" target="_blank" rel="noopener">
+            <a class="contact-card" href="https://drive.google.com/file/d/18W5LN5RhloHY-GxayBU00ZQZZCeaXLcw/view?usp=sharing" target="_blank" rel="noopener">
               <span class="contact-card__icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
               </span>
