@@ -1232,7 +1232,87 @@ img, svg, table { max-width: 100%; }
   #contact-section .heading-section p { text-align: center; text-align-last: auto; }
 }
 */
-</style>	  
+</style>	
+	  <!-- ==========================================================
+     BRIGHTER TEXT / MOBILE READABILITY
+========================================================== -->
+<style>
+/* ===== A · gentle lift everywhere (desktop included) ===== */
+.heading-section p                                    { color: rgba(255,255,255,.84); }
+#about-section .skill-mf > span                       { color: rgba(255,255,255,.92); }
+#about-section ul.about-info li > span:first-child    { color: #ffbd39; }
+#about-section ul.about-info li > span:last-child     { color: rgba(255,255,255,.86); }
+#resume-section .tl-list li,
+#resume-section .tl-note                              { color: rgba(255,255,255,.84); }
+#resume-section .tl-note strong                       { color: #fff; }
+#resume-section .tl-org                               { color: rgba(255,255,255,.62); }
+#Publications-section .pub-authors                    { color: rgba(255,255,255,.68); }
+#Publications-section .pub-year                       { color: rgba(255,255,255,.82); }
+#projects-section .cp-points li                       { color: rgba(255,255,255,.84); }
+#projects-section .cp-eyebrow                         { color: rgba(255,255,255,.56); }
+#projects-section .cp-date                            { color: rgba(255,255,255,.86); }
+#projects-section .cp-tags li                         { color: rgba(255,255,255,.74); }
+#projects-section .cp-figcap                          { color: rgba(255,255,255,.56); }
+#philanthropy-section .phil-story p                   { color: rgba(255,255,255,.84); }
+#philanthropy-section .phil-chips li                  { color: rgba(255,255,255,.86); }
+#philanthropy-section .phil-stat__label               { color: rgba(255,255,255,.72); }
+#philanthropy-section .phil-quote p                   { color: rgba(255,255,255,.95); }
+#contact-section .contact-card__label                 { color: rgba(255,255,255,.7); }
+#contact-section .ftco-footer-social li.normal-txt    { color: rgba(255,255,255,.72); }
+
+/* small amber captions read brighter one shade up */
+#projects-section .cp-figcap::before,
+#contact-section .contact-card__cta,
+#Publications-section .pub-link,
+#about-section .about-info p .title-s                 { color: #ff8a2a; }
+
+/* schematic labels */
+#projects-section .dg-lbl   { fill: rgba(255,255,255,.82); }
+#projects-section .dg-sub   { fill: rgba(255,255,255,.52); }
+#projects-section .dg-dim   { stroke: rgba(255,255,255,.46); }
+#projects-section .dg-box   { stroke: rgba(255,255,255,.20); }
+#projects-section .dg-fill2 { fill: rgba(255,255,255,.38); }
+
+/* ===== B · stronger lift on phones & tablets ===== */
+@media (max-width: 991px) {
+  .heading-section p                                  { color: rgba(255,255,255,.92); }
+  #about-section .skill-mf > span                     { color: rgba(255,255,255,.96); }
+  #about-section ul.about-info li > span:last-child   { color: rgba(255,255,255,.92); }
+  #resume-section .tl-list li,
+  #resume-section .tl-note                            { color: rgba(255,255,255,.92); }
+  #resume-section .tl-org                             { color: rgba(255,255,255,.72); }
+  #Publications-section .pub-authors                  { color: rgba(255,255,255,.78); }
+  #Publications-section .pub-title                    { color: #fff; }
+  #projects-section .cp-points li                     { color: rgba(255,255,255,.92); }
+  #projects-section .cp-eyebrow                       { color: rgba(255,255,255,.66); }
+  #projects-section .cp-tags li                       { color: rgba(255,255,255,.84); }
+  #projects-section .cp-figcap                        { color: rgba(255,255,255,.64); }
+  #philanthropy-section .phil-story p                 { color: rgba(255,255,255,.92); }
+  #philanthropy-section .phil-chips li                { color: rgba(255,255,255,.92); }
+  #philanthropy-section .phil-stat__label             { color: rgba(255,255,255,.82); }
+  #contact-section .contact-card__label               { color: rgba(255,255,255,.8); }
+
+  #projects-section .dg-lbl { fill: rgba(255,255,255,.92); font-size: 11px; }
+  #projects-section .dg-sub { fill: rgba(255,255,255,.66); font-size: 9.5px; }
+  #projects-section .dg-tag { fill: #ffc95c; font-size: 9.5px; }
+  #projects-section .dg-dim { stroke: rgba(255,255,255,.55); }
+  #projects-section .dg-box { stroke: rgba(255,255,255,.26); }
+
+  /* a little more air makes bright text easier to read on a phone */
+  #projects-section .cp-points li,
+  #resume-section .tl-list li,
+  #philanthropy-section .phil-story p                 { line-height: 1.78; }
+  .heading-section p                                  { font-size: 15px; line-height: 1.8; }
+}
+
+/* ===== C · touch screens can't hover — stop dimming the photos ===== */
+@media (hover: none) {
+  #philanthropy-section .phil-shot img    { filter: grayscale(0%) brightness(1); }
+  #philanthropy-section .phil-shot::after { opacity: .82; }
+  #philanthropy-section .phil-cap         { transform: none; opacity: 1; }
+  #philanthropy-section .phil-cap h4      { text-shadow: 0 1px 6px rgba(0,0,0,.9); }
+}
+</style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
