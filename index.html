@@ -1440,6 +1440,79 @@ img, svg, table { max-width: 100%; }
   }
 }
 </style>
+	<!-- ==========================================================
+     SECTION SEPARATOR (dimension line) + NAVBAR HAIRLINE
+========================================================== -->
+<style>
+/* ---------- separator ---------- */
+.sec-sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 26px 15px;
+}
+.sec-sep__ln { flex: 1 1 auto; min-width: 14px; height: 1px; }
+.sec-sep__ln.l { background: linear-gradient(90deg, transparent, rgba(255,255,255,.20)); }
+.sec-sep__ln.r { background: linear-gradient(90deg, rgba(255,255,255,.20), transparent); }
+.sec-sep__mid  { flex: none; display: block; width: 330px; height: auto; }
+
+.sec-sep .dm-line  { fill: none; stroke: rgba(255,255,255,.30); stroke-width: 1.2; stroke-linecap: round; }
+.sec-sep .dm-arrow { fill: rgba(255,255,255,.45); }
+.sec-sep .dm-tick  { stroke: rgba(255,255,255,.24); stroke-width: 1.1; stroke-linecap: round; }
+.sec-sep .dm-tick.major { stroke: rgba(255,255,255,.42); }
+.sec-sep .dm-gem {
+  fill: #ffbd39;
+  filter: drop-shadow(0 0 5px rgba(249,109,0,.85));
+  animation: sec-sep-blink 2.6s ease-in-out infinite;
+}
+@keyframes sec-sep-blink { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+
+/* phones — smaller centrepiece, brighter strokes */
+@media (max-width: 767px) {
+  .sec-sep { gap: 12px; padding: 20px 15px; }
+  .sec-sep__mid { width: 210px; }
+  .sec-sep .dm-line  { stroke: rgba(255,255,255,.40); }
+  .sec-sep .dm-tick  { stroke: rgba(255,255,255,.34); }
+  .sec-sep .dm-tick.major { stroke: rgba(255,255,255,.55); }
+  .sec-sep .dm-arrow { fill: rgba(255,255,255,.58); }
+  .sec-sep__ln.l { background: linear-gradient(90deg, transparent, rgba(255,255,255,.30)); }
+  .sec-sep__ln.r { background: linear-gradient(90deg, rgba(255,255,255,.30), transparent); }
+}
+@media (max-width: 400px) { .sec-sep__mid { width: 180px; } }
+
+/* ---------- hairline under the navbar ---------- */
+#ftco-navbar { border-bottom: 1px solid rgba(255,255,255,.10); } {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,.14) 16%,
+    rgba(249,109,0,.55) 50%,
+    rgba(255,255,255,.14) 84%,
+    transparent 100%);
+}
+@media (max-width: 991px) {
+  #ftco-navbar::after {
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255,255,255,.20) 12%,
+      rgba(249,109,0,.65) 50%,
+      rgba(255,255,255,.20) 88%,
+      transparent 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sec-sep .dm-gem { animation: none; opacity: 1; }
+}
+</style>  
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -1628,7 +1701,54 @@ img, svg, table { max-width: 100%; }
 		</div>
     </section>
 
+    </section>
 
+<div class="sec-sep" aria-hidden="true">
+  <span class="sec-sep__ln l"></span>
+  <svg class="sec-sep__mid" viewBox="0 0 330 34" width="330" height="34" focusable="false">
+    <path class="dm-line" d="M8 22 H143"/><path class="dm-line" d="M187 22 H322"/>
+    <path class="dm-arrow" d="M8 22 l10-4 v8 Z"/><path class="dm-arrow" d="M322 22 l-10-4 v8 Z"/>
+    <g class="dm-tick">
+      <path d="M32 22 v-6"/><path d="M56 22 v-4"/><path d="M80 22 v-6"/><path d="M104 22 v-4"/><path d="M128 22 v-6"/>
+      <path d="M202 22 v-6"/><path d="M226 22 v-4"/><path d="M250 22 v-6"/><path d="M274 22 v-4"/><path d="M298 22 v-6"/>
+    </g>
+    <g class="dm-tick major"><path d="M80 22 v-10"/><path d="M250 22 v-10"/></g>
+    <rect class="dm-gem" x="158" y="14" width="15" height="15" rx="3" transform="rotate(45 165.5 21.5)"/>
+  </svg>
+  <span class="sec-sep__ln r"></span>
+</div>
+    </section>
+
+<div class="sec-sep" aria-hidden="true">
+  <span class="sec-sep__ln l"></span>
+  <svg class="sec-sep__mid" viewBox="0 0 330 34" width="330" height="34" focusable="false">
+    <path class="dm-line" d="M8 22 H143"/><path class="dm-line" d="M187 22 H322"/>
+    <path class="dm-arrow" d="M8 22 l10-4 v8 Z"/><path class="dm-arrow" d="M322 22 l-10-4 v8 Z"/>
+    <g class="dm-tick">
+      <path d="M32 22 v-6"/><path d="M56 22 v-4"/><path d="M80 22 v-6"/><path d="M104 22 v-4"/><path d="M128 22 v-6"/>
+      <path d="M202 22 v-6"/><path d="M226 22 v-4"/><path d="M250 22 v-6"/><path d="M274 22 v-4"/><path d="M298 22 v-6"/>
+    </g>
+    <g class="dm-tick major"><path d="M80 22 v-10"/><path d="M250 22 v-10"/></g>
+    <rect class="dm-gem" x="158" y="14" width="15" height="15" rx="3" transform="rotate(45 165.5 21.5)"/>
+  </svg>
+  <span class="sec-sep__ln r"></span>
+</div>
+<div class="sec-sep" aria-hidden="true">
+  <span class="sec-sep__ln l"></span>
+  <svg class="sec-sep__mid" viewBox="0 0 330 34" width="330" height="34" focusable="false">
+    <path class="dm-line" d="M8 22 H143"/><path class="dm-line" d="M187 22 H322"/>
+    <path class="dm-arrow" d="M8 22 l10-4 v8 Z"/><path class="dm-arrow" d="M322 22 l-10-4 v8 Z"/>
+    <g class="dm-tick">
+      <path d="M32 22 v-6"/><path d="M56 22 v-4"/><path d="M80 22 v-6"/><path d="M104 22 v-4"/><path d="M128 22 v-6"/>
+      <path d="M202 22 v-6"/><path d="M226 22 v-4"/><path d="M250 22 v-6"/><path d="M274 22 v-4"/><path d="M298 22 v-6"/>
+    </g>
+    <g class="dm-tick major"><path d="M80 22 v-10"/><path d="M250 22 v-10"/></g>
+    <rect class="dm-gem" x="158" y="14" width="15" height="15" rx="3" transform="rotate(45 165.5 21.5)"/>
+  </svg>
+  <span class="sec-sep__ln r"></span>
+</div>
+   
+    <section class="ftco-section ftco-no-pb" id="resume-section">
 
 	
     <section class="ftco-section ftco-no-pb" id="resume-section">
@@ -1792,7 +1912,20 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 		</div>
     </section>
 
-   
+   <div class="sec-sep" aria-hidden="true">
+  <span class="sec-sep__ln l"></span>
+  <svg class="sec-sep__mid" viewBox="0 0 330 34" width="330" height="34" focusable="false">
+    <path class="dm-line" d="M8 22 H143"/><path class="dm-line" d="M187 22 H322"/>
+    <path class="dm-arrow" d="M8 22 l10-4 v8 Z"/><path class="dm-arrow" d="M322 22 l-10-4 v8 Z"/>
+    <g class="dm-tick">
+      <path d="M32 22 v-6"/><path d="M56 22 v-4"/><path d="M80 22 v-6"/><path d="M104 22 v-4"/><path d="M128 22 v-6"/>
+      <path d="M202 22 v-6"/><path d="M226 22 v-4"/><path d="M250 22 v-6"/><path d="M274 22 v-4"/><path d="M298 22 v-6"/>
+    </g>
+    <g class="dm-tick major"><path d="M80 22 v-10"/><path d="M250 22 v-10"/></g>
+    <rect class="dm-gem" x="158" y="14" width="15" height="15" rx="3" transform="rotate(45 165.5 21.5)"/>
+  </svg>
+  <span class="sec-sep__ln r"></span>
+</div>
 
     <section class="ftco-section" id="Publications-section">
       <div class="container">
@@ -1880,7 +2013,20 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
         </div>
       </div>
     </section>
-
+<div class="sec-sep" aria-hidden="true">
+  <span class="sec-sep__ln l"></span>
+  <svg class="sec-sep__mid" viewBox="0 0 330 34" width="330" height="34" focusable="false">
+    <path class="dm-line" d="M8 22 H143"/><path class="dm-line" d="M187 22 H322"/>
+    <path class="dm-arrow" d="M8 22 l10-4 v8 Z"/><path class="dm-arrow" d="M322 22 l-10-4 v8 Z"/>
+    <g class="dm-tick">
+      <path d="M32 22 v-6"/><path d="M56 22 v-4"/><path d="M80 22 v-6"/><path d="M104 22 v-4"/><path d="M128 22 v-6"/>
+      <path d="M202 22 v-6"/><path d="M226 22 v-4"/><path d="M250 22 v-6"/><path d="M274 22 v-4"/><path d="M298 22 v-6"/>
+    </g>
+    <g class="dm-tick major"><path d="M80 22 v-10"/><path d="M250 22 v-10"/></g>
+    <rect class="dm-gem" x="158" y="14" width="15" height="15" rx="3" transform="rotate(45 165.5 21.5)"/>
+  </svg>
+  <span class="sec-sep__ln r"></span>
+</div>
 	  <section class="ftco-section" id="projects-section">
   <div class="container">
 
@@ -2249,6 +2395,20 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
 
   </div>
 </section>
+		<div class="sec-sep" aria-hidden="true">
+  <span class="sec-sep__ln l"></span>
+  <svg class="sec-sep__mid" viewBox="0 0 330 34" width="330" height="34" focusable="false">
+    <path class="dm-line" d="M8 22 H143"/><path class="dm-line" d="M187 22 H322"/>
+    <path class="dm-arrow" d="M8 22 l10-4 v8 Z"/><path class="dm-arrow" d="M322 22 l-10-4 v8 Z"/>
+    <g class="dm-tick">
+      <path d="M32 22 v-6"/><path d="M56 22 v-4"/><path d="M80 22 v-6"/><path d="M104 22 v-4"/><path d="M128 22 v-6"/>
+      <path d="M202 22 v-6"/><path d="M226 22 v-4"/><path d="M250 22 v-6"/><path d="M274 22 v-4"/><path d="M298 22 v-6"/>
+    </g>
+    <g class="dm-tick major"><path d="M80 22 v-10"/><path d="M250 22 v-10"/></g>
+    <rect class="dm-gem" x="158" y="14" width="15" height="15" rx="3" transform="rotate(45 165.5 21.5)"/>
+  </svg>
+  <span class="sec-sep__ln r"></span>
+</div>
 	<section class="ftco-section" id="credentials-section">
   <div class="container">
     <div class="row justify-content-center mb-5 pb-3">
@@ -2366,6 +2526,20 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
     </div>
   </div>
 </section>  
+		<div class="sec-sep" aria-hidden="true">
+  <span class="sec-sep__ln l"></span>
+  <svg class="sec-sep__mid" viewBox="0 0 330 34" width="330" height="34" focusable="false">
+    <path class="dm-line" d="M8 22 H143"/><path class="dm-line" d="M187 22 H322"/>
+    <path class="dm-arrow" d="M8 22 l10-4 v8 Z"/><path class="dm-arrow" d="M322 22 l-10-4 v8 Z"/>
+    <g class="dm-tick">
+      <path d="M32 22 v-6"/><path d="M56 22 v-4"/><path d="M80 22 v-6"/><path d="M104 22 v-4"/><path d="M128 22 v-6"/>
+      <path d="M202 22 v-6"/><path d="M226 22 v-4"/><path d="M250 22 v-6"/><path d="M274 22 v-4"/><path d="M298 22 v-6"/>
+    </g>
+    <g class="dm-tick major"><path d="M80 22 v-10"/><path d="M250 22 v-10"/></g>
+    <rect class="dm-gem" x="158" y="14" width="15" height="15" rx="3" transform="rotate(45 165.5 21.5)"/>
+  </svg>
+  <span class="sec-sep__ln r"></span>
+</div>
 	  <section class="ftco-section" id="philanthropy-section">
   <div class="container">
 
