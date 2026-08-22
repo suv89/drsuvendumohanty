@@ -1486,7 +1486,14 @@ img, svg, table { max-width: 100%; }
 
 /* ---------- hairline under the navbar ---------- */
 #ftco-navbar { border-bottom: 1px solid rgba(255,255,255,.10); }
-
+/* even gap on both sides of every separator */
+.sec-sep { padding: 0 15px !important; margin: 0 auto !important; }
+section:has(+ .sec-sep) { padding-bottom: 4em !important; }
+.sec-sep + section      { padding-top: 4em !important; }
+@media (max-width: 767px) {
+  section:has(+ .sec-sep) { padding-bottom: 2.6em !important; }
+  .sec-sep + section      { padding-top: 2.6em !important; }
+}
 /* the "Open to New Opportunities" banner sits outside a .container,
    so its row's negative margins bled 15px past the screen edge */
 .ftco-hireme > .row { margin-left: 0; margin-right: 0; }
