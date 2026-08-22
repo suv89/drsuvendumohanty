@@ -1485,29 +1485,11 @@ img, svg, table { max-width: 100%; }
 @media (max-width: 400px) { .sec-sep__mid { width: 180px; } }
 
 /* ---------- hairline under the navbar ---------- */
-#ftco-navbar { border-bottom: 1px solid rgba(255,255,255,.10); } {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 1px;
-  pointer-events: none;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(255,255,255,.14) 16%,
-    rgba(249,109,0,.55) 50%,
-    rgba(255,255,255,.14) 84%,
-    transparent 100%);
-}
-@media (max-width: 991px) {
-  #ftco-navbar::after {
-    background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(255,255,255,.20) 12%,
-      rgba(249,109,0,.65) 50%,
-      rgba(255,255,255,.20) 88%,
-      transparent 100%);
-  }
-}
+#ftco-navbar { border-bottom: 1px solid rgba(255,255,255,.10); }
+
+/* the "Open to New Opportunities" banner sits outside a .container,
+   so its row's negative margins bled 15px past the screen edge */
+.ftco-hireme > .row { margin-left: 0; margin-right: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .sec-sep .dm-gem { animation: none; opacity: 1; }
@@ -1701,7 +1683,7 @@ img, svg, table { max-width: 100%; }
 		</div>
     </section>
 
-    </section>
+ 
 
 <div class="sec-sep" aria-hidden="true">
   <span class="sec-sep__ln l"></span>
@@ -1717,7 +1699,7 @@ img, svg, table { max-width: 100%; }
   </svg>
   <span class="sec-sep__ln r"></span>
 </div>
-    </section>
+   
 
      
     <section class="ftco-section ftco-no-pb" id="resume-section">
@@ -2828,7 +2810,7 @@ frameworks, and maintenance decision-support solutions, achieving an 18% reducti
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <a class="contact-card" href="https://drive.google.com/file/d/1IGgQW2IgaYhmpPVbuEyQ9yeXlccs9hvL/view?usp=drive_link" target="_blank" rel="noopener">
+            <a class="contact-card" href="https://drive.google.com/file/d/18W5LN5RhloHY-GxayBU00ZQZZCeaXLcw/view?usp=sharing" target="_blank" rel="noopener">
               <span class="contact-card__icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11.5v5.5m0 0-2.4-2.4M12 17l2.4-2.4"/></svg>
               </span>
