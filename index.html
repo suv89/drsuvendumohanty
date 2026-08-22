@@ -1415,6 +1415,31 @@ img, svg, table { max-width: 100%; }
   #credentials-section .cred-title { font-size: 14.5px; }
 }
 </style>
+	  <!-- ==========================================================
+     NAVBAR — keep all menu items on one line
+========================================================== -->
+<style>
+@media (min-width: 992px) {
+  /* Bootstrap's .nav class allows wrapping — switch it off */
+  #ftco-navbar .navbar-nav { flex-wrap: nowrap !important; }
+
+  /* item spacing and size scale with the window instead of a fixed 20px */
+  #ftco-navbar .navbar-nav .nav-item .nav-link {
+    padding-left: clamp(9px, 1.05vw, 17px) !important;
+    padding-right: clamp(9px, 1.05vw, 17px) !important;
+    font-size: clamp(12px, .95vw, 14px) !important;
+    letter-spacing: .01em;
+    white-space: nowrap;
+  }
+
+  /* the brand gives back a little room on narrower laptops */
+  #ftco-navbar .navbar-brand {
+    font-size: clamp(18px, 1.6vw, 24px) !important;
+    white-space: nowrap;
+    margin-right: 8px;
+  }
+}
+</style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
