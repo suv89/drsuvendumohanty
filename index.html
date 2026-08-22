@@ -1106,6 +1106,83 @@ section[id] { scroll-margin-top: 80px; }
   #projects-section .cp-num { font-size: 46px; top: 8px; right: 18px; }
 }
 </style>
+	<!-- ==========================================================
+     MOBILE FIX — keeps the Projects cards inside the phone screen
+========================================================== -->
+<style>
+/* ---- 1 · let the card's grid tracks shrink on a phone ---- */
+#projects-section .cp-card,
+#projects-section .cp-side,
+#projects-section .cp-body { min-width: 0; }
+
+/* ---- 2 · the wide diagram scrolls inside its own box ---- */
+#projects-section .cp-fig { max-width: 100%; }
+#projects-section .cp-fig__scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(249,109,0,.55) transparent;
+}
+#projects-section .cp-fig__scroll::-webkit-scrollbar { height: 4px; }
+#projects-section .cp-fig__scroll::-webkit-scrollbar-track { background: rgba(255,255,255,.05); border-radius: 4px; }
+#projects-section .cp-fig__scroll::-webkit-scrollbar-thumb { background: rgba(249,109,0,.55); border-radius: 4px; }
+
+/* ---- 3 · long words never push the card wider ---- */
+#projects-section .cp-title,
+#projects-section .cp-partner,
+#projects-section .cp-points li,
+#projects-section .cp-tags li { overflow-wrap: break-word; word-break: normal; }
+
+/* ---- 4 · phone-sized diagram + "swipe" hint ---- */
+@media (max-width: 767px) {
+  #projects-section .cp-fig { padding: 12px 12px 10px; }
+  #projects-section .cp-fig svg { min-width: 470px; }
+  #projects-section .cp-figcap {
+    letter-spacing: .1em;
+    font-size: 9px;
+    line-height: 1.4;
+  }
+  #projects-section .cp-figcap::after {
+    content: "swipe \2194";
+    margin-left: auto;
+    padding-left: 8px;
+    flex: none;
+    font-size: 8.5px;
+    letter-spacing: .1em;
+    color: rgba(255,255,255,.32);
+  }
+  #projects-section .cp-tags li { font-size: 9.5px; padding: 5px 9px; letter-spacing: .05em; }
+  #projects-section .cp-points li { font-size: 13px; }
+}
+
+/* ---- 5 · Philanthropy section on small screens ---- */
+@media (max-width: 575px) {
+  #philanthropy-section .phil-gallery { grid-auto-rows: 132px; gap: 10px; }
+  #philanthropy-section .phil-cap { padding: 11px 12px; }
+  #philanthropy-section .phil-cap h4 {
+    font-size: 12px; line-height: 1.3;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  #philanthropy-section .phil-cap span {
+    font-size: 9px; letter-spacing: .08em;
+    display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  #philanthropy-section .phil-shot--wide .phil-cap h4 { font-size: 14px; -webkit-line-clamp: 3; }
+  #philanthropy-section .phil-chips li { font-size: 10.5px; padding: 5px 10px; }
+  #philanthropy-section .phil-story p { font-size: 13.5px; line-height: 1.75; }
+  #philanthropy-section .phil-stat__label { font-size: 10px; letter-spacing: .1em; }
+}
+#philanthropy-section .phil-story,
+#philanthropy-section .phil-stats,
+#philanthropy-section .phil-gallery { min-width: 0; max-width: 100%; }
+#philanthropy-section .phil-shot img { max-width: 100%; }
+
+/* ---- 6 · safety net (delete these 2 lines if scrolling misbehaves) ---- */
+html, body { max-width: 100%; overflow-x: hidden; }
+img, svg, table { max-width: 100%; }
+</style>  
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
