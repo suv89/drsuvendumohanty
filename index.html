@@ -263,17 +263,17 @@ section[id] { scroll-margin-top: 80px; }
   display: flex;
   align-items: baseline;
   margin: 0;
-  padding: 10px 0;
+  padding: 11px 0;
   border-bottom: 1px solid rgba(255,255,255,.06);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.55;
 }
 #about-section .about-info p:last-child { border-bottom: none; padding-bottom: 0; }
 #about-section .about-info p .title-s {
-  flex: 0 0 92px;
-  font-size: 10.5px;
+  flex: 0 0 clamp(100px, 9vw, 114px);
+  font-size: clamp(11.5px, 1vw, 12.5px);
   font-weight: 600;
-  letter-spacing: .1em;
+  letter-spacing: .07em;
   text-transform: uppercase;
   color: #F96D00;
 }
